@@ -33,23 +33,29 @@ namespace SpeakingChatbot.socket
         {
 
             // store sa env
-            string address = "127.0.0.1";
+            // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
+            string address = "192.168.1.13";
             int port = 8080;
 
             if (!client.Connected) {
-                client.Connect(address, port);
+                try {
+                    client.Connect(address, port);
 
-                packetReader = new IO.PacketReader(client.GetStream());
+                    packetReader = new IO.PacketReader(client.GetStream());
 
-                if(!string.IsNullOrEmpty(username)) {
-                    var connectPacket = new IO.PacketBuilder();
-                    connectPacket.WriteOpCode(0);
-                    connectPacket.WriteMsg(username);
-                    // send packet sa server
-                    client.Client.Send(connectPacket.GetPacketBytes());
+                    if (!string.IsNullOrEmpty(username)) {
+                        var connectPacket = new IO.PacketBuilder();
+                        connectPacket.WriteOpCode(0);
+                        connectPacket.WriteMsg(username);
+                        // send packet sa server
+                        client.Client.Send(connectPacket.GetPacketBytes());
+                    }
+
+                    ReadPackets();
+
+                } catch(Exception err) {
+                    Debug.WriteLine($"Error Connecting client: {err}");
                 }
-
-                ReadPackets();
 
             }
         }

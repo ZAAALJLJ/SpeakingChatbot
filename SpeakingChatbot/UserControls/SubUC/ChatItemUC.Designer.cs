@@ -48,14 +48,14 @@
             chatTbl.Name = "chatTbl";
             chatTbl.RowCount = 1;
             chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            chatTbl.Size = new Size(760, 119);
+            chatTbl.Size = new Size(760, 126);
             chatTbl.TabIndex = 0;
             // 
             // profilePic
             // 
             profilePic.Dock = DockStyle.Bottom;
             profilePic.Image = Properties.Resources.forumicon;
-            profilePic.Location = new Point(3, 84);
+            profilePic.Location = new Point(3, 91);
             profilePic.Name = "profilePic";
             profilePic.Size = new Size(32, 32);
             profilePic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -70,7 +70,7 @@
             chatMsg.Location = new Point(384, 3);
             chatMsg.Margin = new Padding(3);
             chatMsg.Name = "chatMsg";
-            chatMsg.Size = new Size(335, 113);
+            chatMsg.Size = new Size(335, 120);
             chatMsg.TabIndex = 1;
             chatMsg.Text = resources.GetString("chatMsg.Text");
             chatMsg.TextAlign = ContentAlignment.MiddleLeft;
@@ -83,7 +83,7 @@
             BackColor = Color.Transparent;
             Controls.Add(chatTbl);
             Name = "ChatItemUC";
-            Size = new Size(760, 119);
+            Size = new Size(760, 126);
             chatTbl.ResumeLayout(false);
             chatTbl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePic).EndInit();

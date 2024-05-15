@@ -27,6 +27,7 @@
             midTbl = new TableLayoutPanel();
             loginBtn = new PictureBox();
             signUpBtn = new PictureBox();
+            white = new Label();
             titleTbl = new TableLayoutPanel();
             titleLbl = new PictureBox();
             continueTbl = new TableLayoutPanel();
@@ -61,21 +62,24 @@
             // 
             // midTbl
             // 
-            midTbl.ColumnCount = 5;
+            midTbl.ColumnCount = 7;
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.5F));
-            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1F));
-            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
+            midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.5F));
             midTbl.Controls.Add(loginBtn, 1, 1);
-            midTbl.Controls.Add(signUpBtn, 3, 1);
+            midTbl.Controls.Add(signUpBtn, 5, 1);
+            midTbl.Controls.Add(white, 3, 1);
             midTbl.Dock = DockStyle.Fill;
             midTbl.Location = new Point(3, 123);
             midTbl.Name = "midTbl";
             midTbl.RowCount = 3;
-            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 34.3137245F));
-            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 31.37255F));
-            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 34.3137245F));
+            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35.3137245F));
+            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 29.372551F));
+            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35.3137245F));
             midTbl.Size = new Size(714, 210);
             midTbl.TabIndex = 2;
             midTbl.Click += midTbl_Click;
@@ -84,10 +88,10 @@
             // 
             loginBtn.Dock = DockStyle.Fill;
             loginBtn.Image = Properties.Resources.loginbutton;
-            loginBtn.Location = new Point(139, 72);
+            loginBtn.Location = new Point(139, 74);
             loginBtn.Margin = new Padding(0);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(214, 65);
+            loginBtn.Size = new Size(178, 61);
             loginBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             loginBtn.TabIndex = 0;
             loginBtn.TabStop = false;
@@ -97,14 +101,25 @@
             // 
             signUpBtn.Dock = DockStyle.Fill;
             signUpBtn.Image = Properties.Resources.signupbutton;
-            signUpBtn.Location = new Point(360, 72);
+            signUpBtn.Location = new Point(394, 74);
             signUpBtn.Margin = new Padding(0);
             signUpBtn.Name = "signUpBtn";
-            signUpBtn.Size = new Size(214, 65);
+            signUpBtn.Size = new Size(178, 61);
             signUpBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpBtn.TabIndex = 1;
             signUpBtn.TabStop = false;
             signUpBtn.Click += signUpBtn_Click;
+            // 
+            // white
+            // 
+            white.AutoSize = true;
+            white.BackColor = Color.White;
+            white.Dock = DockStyle.Fill;
+            white.Location = new Point(352, 74);
+            white.Margin = new Padding(0);
+            white.Name = "white";
+            white.Size = new Size(7, 61);
+            white.TabIndex = 2;
             // 
             // titleTbl
             // 
@@ -181,6 +196,7 @@
             Size = new Size(720, 480);
             loginTbl.ResumeLayout(false);
             midTbl.ResumeLayout(false);
+            midTbl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)loginBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)signUpBtn).EndInit();
             titleTbl.ResumeLayout(false);
@@ -200,5 +216,6 @@
         private PictureBox loginBtn;
         private PictureBox signUpBtn;
         private PictureBox continueLbl;
+        private Label white;
     }
 }

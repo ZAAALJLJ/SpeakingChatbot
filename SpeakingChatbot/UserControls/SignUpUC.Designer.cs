@@ -37,6 +37,7 @@
             usernameTextBox = new RichTextBox();
             passwordTextBox = new RichTextBox();
             cPasswordTextBox = new RichTextBox();
+            errorMsg = new Label();
             signUpTbl.SuspendLayout();
             titleTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)signUpLbl).BeginInit();
@@ -67,6 +68,7 @@
             signUpTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
             signUpTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 41F));
             signUpTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
+            signUpTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             signUpTbl.Size = new Size(1280, 720);
             signUpTbl.TabIndex = 0;
             // 
@@ -126,7 +128,7 @@
             enterBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             enterBtn.TabIndex = 0;
             enterBtn.TabStop = false;
-            enterBtn.Click += enterBtn_Click_1;
+            enterBtn.Click += enterBtn_Click;
             // 
             // midTbl
             // 
@@ -136,17 +138,19 @@
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1F));
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34F));
             midTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14F));
-            midTbl.Controls.Add(usernameTbl, 1, 1);
-            midTbl.Controls.Add(passwordTbl, 1, 3);
-            midTbl.Controls.Add(cPasswordLbl, 1, 5);
-            midTbl.Controls.Add(usernameTextBox, 3, 1);
-            midTbl.Controls.Add(passwordTextBox, 3, 3);
-            midTbl.Controls.Add(cPasswordTextBox, 3, 5);
+            midTbl.Controls.Add(usernameTbl, 1, 2);
+            midTbl.Controls.Add(passwordTbl, 1, 4);
+            midTbl.Controls.Add(cPasswordLbl, 1, 6);
+            midTbl.Controls.Add(usernameTextBox, 3, 2);
+            midTbl.Controls.Add(passwordTextBox, 3, 4);
+            midTbl.Controls.Add(cPasswordTextBox, 3, 6);
+            midTbl.Controls.Add(errorMsg, 3, 0);
             midTbl.Dock = DockStyle.Fill;
             midTbl.Location = new Point(3, 190);
             midTbl.Name = "midTbl";
-            midTbl.RowCount = 6;
-            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 17F));
+            midTbl.RowCount = 7;
+            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 7F));
             midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 17F));
             midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
             midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 17F));
@@ -163,7 +167,7 @@
             usernameTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             usernameTbl.Controls.Add(usernameLbl, 1, 0);
             usernameTbl.Dock = DockStyle.Fill;
-            usernameTbl.Location = new Point(178, 49);
+            usernameTbl.Location = new Point(178, 48);
             usernameTbl.Margin = new Padding(0);
             usernameTbl.Name = "usernameTbl";
             usernameTbl.RowCount = 1;
@@ -190,7 +194,7 @@
             passwordTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             passwordTbl.Controls.Add(passwordLbl, 1, 0);
             passwordTbl.Dock = DockStyle.Fill;
-            passwordTbl.Location = new Point(178, 144);
+            passwordTbl.Location = new Point(178, 143);
             passwordTbl.Margin = new Padding(0);
             passwordTbl.Name = "passwordTbl";
             passwordTbl.RowCount = 1;
@@ -214,10 +218,10 @@
             // 
             cPasswordLbl.Dock = DockStyle.Fill;
             cPasswordLbl.Image = Properties.Resources.confirm_password_label;
-            cPasswordLbl.Location = new Point(178, 239);
+            cPasswordLbl.Location = new Point(178, 238);
             cPasswordLbl.Margin = new Padding(0);
             cPasswordLbl.Name = "cPasswordLbl";
-            cPasswordLbl.Size = new Size(471, 50);
+            cPasswordLbl.Size = new Size(471, 51);
             cPasswordLbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cPasswordLbl.TabIndex = 2;
             cPasswordLbl.TabStop = false;
@@ -225,7 +229,7 @@
             // usernameTextBox
             // 
             usernameTextBox.Dock = DockStyle.Fill;
-            usernameTextBox.Location = new Point(664, 52);
+            usernameTextBox.Location = new Point(664, 51);
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.Size = new Size(427, 43);
             usernameTextBox.TabIndex = 3;
@@ -234,7 +238,7 @@
             // passwordTextBox
             // 
             passwordTextBox.Dock = DockStyle.Fill;
-            passwordTextBox.Location = new Point(664, 147);
+            passwordTextBox.Location = new Point(664, 146);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(427, 43);
             passwordTextBox.TabIndex = 4;
@@ -243,11 +247,26 @@
             // cPasswordTextBox
             // 
             cPasswordTextBox.Dock = DockStyle.Fill;
-            cPasswordTextBox.Location = new Point(664, 242);
+            cPasswordTextBox.Location = new Point(664, 241);
             cPasswordTextBox.Name = "cPasswordTextBox";
-            cPasswordTextBox.Size = new Size(427, 44);
+            cPasswordTextBox.Size = new Size(427, 45);
             cPasswordTextBox.TabIndex = 5;
             cPasswordTextBox.Text = "";
+            // 
+            // errorMsg
+            // 
+            errorMsg.AutoSize = true;
+            errorMsg.BackColor = Color.Red;
+            errorMsg.Dock = DockStyle.Fill;
+            errorMsg.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            errorMsg.ForeColor = Color.White;
+            errorMsg.Location = new Point(664, 0);
+            errorMsg.Name = "errorMsg";
+            errorMsg.Size = new Size(427, 28);
+            errorMsg.TabIndex = 6;
+            errorMsg.Text = "ERROR MESSAGE HERE";
+            errorMsg.TextAlign = ContentAlignment.MiddleRight;
+            errorMsg.Visible = false;
             // 
             // SignUpUC
             // 
@@ -265,6 +284,7 @@
             enterTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)enterBtn).EndInit();
             midTbl.ResumeLayout(false);
+            midTbl.PerformLayout();
             usernameTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)usernameLbl).EndInit();
             passwordTbl.ResumeLayout(false);
@@ -290,5 +310,6 @@
         private PictureBox enterBtn;
         private RichTextBox cPasswordTextBox;
         private PictureBox signUpLbl;
+        private Label errorMsg;
     }
 }

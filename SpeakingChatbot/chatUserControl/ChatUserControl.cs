@@ -47,17 +47,16 @@ namespace SpeakingChatbot.chatUserControl {
         private void userConnected() {
             var user = new Models.UserModel {
                 UserName = connectClient.packetReader.ReadMsg(),
-                Id = connectClient.packetReader.ReadMsg()
             };
 
             Users.Add(user);
 
 
             // display user sa gc for now debug muna, wait for the ui
-            if (!Users.Any(x => x.Id == user.Id)) {
+            if (!Users.Any(x => x.UserName == user.UserName)) {
             }
             Debug.WriteLine(user.UserName);
-            Debug.WriteLine(user.Id);
+            Debug.WriteLine(user.UserName);
         }
 
         public void msgReceived() {
@@ -100,7 +99,7 @@ namespace SpeakingChatbot.chatUserControl {
 
         private void userDisconnected() {
             var UID = connectClient.packetReader.ReadMsg();
-            var user = Users.Where(x => x.Id.ToString() == UID).FirstOrDefault();
+            var user = Users.Where(x => x.UserName == UID).FirstOrDefault();
 
             Users.Remove(user);
         }

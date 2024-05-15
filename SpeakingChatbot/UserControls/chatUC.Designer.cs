@@ -1,4 +1,6 @@
-﻿namespace SpeakingChatbot.UserControls {
+﻿using System.Windows.Forms;
+
+namespace SpeakingChatbot.UserControls {
     partial class ChatUC {
         /// <summary> 
         /// Required designer variable.
@@ -27,6 +29,7 @@
             leftChatTbl = new TableLayoutPanel();
             avatarTbl = new TableLayoutPanel();
             avatarPanel = new Panel();
+            usersPanel = new FlowLayoutPanel();
             onlineTblPanel = new TableLayoutPanel();
             botBtn = new PictureBox();
             usersBtn = new PictureBox();
@@ -41,12 +44,13 @@
             userNameLbl = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             chatBoxMsgTbl = new TableLayoutPanel();
-            chatPanel = new FlowLayoutPanel();
+            chatPanel = new Panel();
             backTbl = new TableLayoutPanel();
             backBtn = new PictureBox();
             chatTbl.SuspendLayout();
             leftChatTbl.SuspendLayout();
             avatarTbl.SuspendLayout();
+            avatarPanel.SuspendLayout();
             onlineTblPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)botBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usersBtn).BeginInit();
@@ -99,9 +103,9 @@
             // avatarTbl
             // 
             avatarTbl.ColumnCount = 3;
-            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
-            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
+            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90F));
+            avatarTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
             avatarTbl.Controls.Add(avatarPanel, 1, 1);
             avatarTbl.Controls.Add(onlineTblPanel, 1, 0);
             avatarTbl.Dock = DockStyle.Fill;
@@ -119,12 +123,24 @@
             avatarPanel.AutoSize = true;
             avatarPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             avatarPanel.BackColor = Color.FromArgb(200, 0, 0, 0);
+            avatarPanel.Controls.Add(usersPanel);
             avatarPanel.Dock = DockStyle.Fill;
-            avatarPanel.Location = new Point(32, 36);
+            avatarPanel.Location = new Point(16, 36);
             avatarPanel.Margin = new Padding(0);
             avatarPanel.Name = "avatarPanel";
-            avatarPanel.Size = new Size(261, 330);
+            avatarPanel.Size = new Size(294, 330);
             avatarPanel.TabIndex = 1;
+            avatarPanel.SizeChanged += avatarPanel_SizeChanged;
+            // 
+            // usersPanel
+            // 
+            usersPanel.AutoScroll = true;
+            usersPanel.BackColor = Color.Transparent;
+            usersPanel.Dock = DockStyle.Fill;
+            usersPanel.Location = new Point(0, 0);
+            usersPanel.Name = "usersPanel";
+            usersPanel.Size = new Size(294, 330);
+            usersPanel.TabIndex = 0;
             // 
             // onlineTblPanel
             // 
@@ -136,37 +152,41 @@
             onlineTblPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
             onlineTblPanel.Controls.Add(botBtn, 1, 1);
             onlineTblPanel.Controls.Add(usersBtn, 3, 1);
-            onlineTblPanel.Location = new Point(32, 0);
+            onlineTblPanel.Dock = DockStyle.Fill;
+            onlineTblPanel.Location = new Point(16, 0);
             onlineTblPanel.Margin = new Padding(0);
             onlineTblPanel.Name = "onlineTblPanel";
             onlineTblPanel.RowCount = 2;
             onlineTblPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 2F));
             onlineTblPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 98F));
             onlineTblPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            onlineTblPanel.Size = new Size(250, 36);
+            onlineTblPanel.Size = new Size(294, 36);
             onlineTblPanel.TabIndex = 2;
             // 
             // botBtn
             // 
+            botBtn.BackgroundImageLayout = ImageLayout.None;
             botBtn.Dock = DockStyle.Fill;
             botBtn.Image = Properties.Resources.dahlia;
-            botBtn.Location = new Point(15, 3);
+            botBtn.Location = new Point(17, 3);
             botBtn.Name = "botBtn";
-            botBtn.Size = new Size(99, 30);
+            botBtn.Size = new Size(117, 30);
             botBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             botBtn.TabIndex = 0;
             botBtn.TabStop = false;
+            botBtn.Click += botBtn_Click;
             // 
             // usersBtn
             // 
             usersBtn.Dock = DockStyle.Fill;
-            usersBtn.Image = Properties.Resources.currently_online_label;
-            usersBtn.Location = new Point(135, 3);
+            usersBtn.Image = Properties.Resources.users;
+            usersBtn.Location = new Point(157, 3);
             usersBtn.Name = "usersBtn";
-            usersBtn.Size = new Size(99, 30);
+            usersBtn.Size = new Size(117, 30);
             usersBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             usersBtn.TabIndex = 1;
             usersBtn.TabStop = false;
+            usersBtn.Click += usersBtn_Click;
             // 
             // chatLblTbl
             // 
@@ -323,6 +343,7 @@
             // 
             // chatBoxMsgTbl
             // 
+            chatBoxMsgTbl.AutoScroll = true;
             chatBoxMsgTbl.ColumnCount = 3;
             chatBoxMsgTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1F));
             chatBoxMsgTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 98F));
@@ -340,10 +361,10 @@
             // 
             chatPanel.BackColor = Color.Transparent;
             chatPanel.Dock = DockStyle.Fill;
-            chatPanel.Location = new Point(4, 0);
-            chatPanel.Margin = new Padding(0);
+            chatPanel.Location = new Point(8, 3);
+            chatPanel.Margin = new Padding(4, 3, 4, 3);
             chatPanel.Name = "chatPanel";
-            chatPanel.Size = new Size(453, 275);
+            chatPanel.Size = new Size(445, 269);
             chatPanel.TabIndex = 0;
             // 
             // backTbl
@@ -385,10 +406,12 @@
             Margin = new Padding(0);
             Name = "ChatUC";
             Size = new Size(833, 464);
+            Load += ChatUC_Load;
             chatTbl.ResumeLayout(false);
             leftChatTbl.ResumeLayout(false);
             avatarTbl.ResumeLayout(false);
             avatarTbl.PerformLayout();
+            avatarPanel.ResumeLayout(false);
             onlineTblPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)botBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)usersBtn).EndInit();
@@ -428,6 +451,7 @@
         private Label userNameLbl;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel chatBoxMsgTbl;
-        private FlowLayoutPanel chatPanel;
+        private Panel chatPanel;
+        private FlowLayoutPanel usersPanel;
     }
 }

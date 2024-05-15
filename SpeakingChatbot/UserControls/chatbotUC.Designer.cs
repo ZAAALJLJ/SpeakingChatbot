@@ -26,7 +26,7 @@
             chatbotTbl = new TableLayoutPanel();
             botTbl = new TableLayoutPanel();
             topTbl = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
+            meetDahlia = new PictureBox();
             backTbl = new TableLayoutPanel();
             backBtn = new PictureBox();
             avatar = new PictureBox();
@@ -39,7 +39,7 @@
             chatbotTbl.SuspendLayout();
             botTbl.SuspendLayout();
             topTbl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)meetDahlia).BeginInit();
             backTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
@@ -88,7 +88,7 @@
             topTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
             topTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
             topTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            topTbl.Controls.Add(pictureBox1, 1, 1);
+            topTbl.Controls.Add(meetDahlia, 1, 1);
             topTbl.Controls.Add(backTbl, 3, 1);
             topTbl.Dock = DockStyle.Fill;
             topTbl.Location = new Point(3, 3);
@@ -99,17 +99,17 @@
             topTbl.Size = new Size(462, 106);
             topTbl.TabIndex = 1;
             // 
-            // pictureBox1
+            // meetDahlia
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.meet_dahlia_label;
-            pictureBox1.Location = new Point(23, 5);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(300, 101);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            meetDahlia.Dock = DockStyle.Fill;
+            meetDahlia.Image = Properties.Resources.meet_dahlia_label;
+            meetDahlia.Location = new Point(23, 5);
+            meetDahlia.Margin = new Padding(0);
+            meetDahlia.Name = "meetDahlia";
+            meetDahlia.Size = new Size(300, 101);
+            meetDahlia.SizeMode = PictureBoxSizeMode.StretchImage;
+            meetDahlia.TabIndex = 2;
+            meetDahlia.TabStop = false;
             // 
             // backTbl
             // 
@@ -140,8 +140,9 @@
             // 
             // avatar
             // 
-            avatar.BackColor = Color.Black;
+            avatar.BackColor = Color.Transparent;
             avatar.Dock = DockStyle.Fill;
+            avatar.Image = Properties.Resources.Idle1;
             avatar.Location = new Point(3, 115);
             avatar.Name = "avatar";
             avatar.Size = new Size(462, 445);
@@ -248,7 +249,7 @@
             chatbotTbl.ResumeLayout(false);
             botTbl.ResumeLayout(false);
             topTbl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)meetDahlia).EndInit();
             backTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
@@ -271,7 +272,7 @@
         private TextBox msgBox;
         private TableLayoutPanel backTbl;
         private PictureBox backBtn;
-        private PictureBox pictureBox1;
+        private PictureBox meetDahlia;
         private TableLayoutPanel chatPanelTbl;
         private FlowLayoutPanel chatPanel;
     }

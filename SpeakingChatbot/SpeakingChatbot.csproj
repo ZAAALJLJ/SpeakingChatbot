@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.37.0" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="NAudio.Lame" Version="2.1.0" />
     <PackageReference Include="System.Speech" Version="8.0.0" />
@@ -39,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="db\" />
+    <Folder Include="Files\" />
   </ItemGroup>
 
 </Project>

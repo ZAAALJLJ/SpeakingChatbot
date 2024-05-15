@@ -1,8 +1,10 @@
-﻿using SpeakingChatbot.UserControls.SubUC;
+﻿using SpeakingChatbot.socket;
+using SpeakingChatbot.UserControls.SubUC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,14 +13,63 @@ using System.Windows.Forms;
 
 namespace SpeakingChatbot.UserControls {
     public partial class ChatbotUC : UserControl {
-        public event Action BackBtnClick;
-        public ChatbotUC() {
+        public event EventHandler<string> BackBtnClick;
+
+        socketControl client;
+
+        string username;
+        public ChatbotUC(string userName, Object Client) {
+            client = (socketControl)Client;
+
             InitializeComponent();
+            username = userName;
+            client.msgChatBotReceivedEvent += msgReceived;
             // chatTbl.BackColor = Color.FromArgb(200, Color.Black);
         }
 
+        public void msgReceived(object? sender, string[] infoArr) {
+            Debug.WriteLine("aaaaaaaaaaaaa");
+            var senderUser = infoArr[0];
+            var receivingUser = infoArr[1];
+            var msg = infoArr[2];
+
+            Debug.WriteLine(senderUser);
+            Debug.WriteLine(receivingUser);
+            Debug.WriteLine(msg);
+
+
+            TextChatModel textModel = null;
+            if (!string.IsNullOrWhiteSpace(msg)) {
+                textModel = new TextChatModel() {
+                    Inbound = true,
+                    Read = true,
+                    Time = DateTime.Now,
+                    Sender = senderUser,
+                    // for now change it later to just msg
+                    Body = senderUser + ": " + msg
+                };
+            }
+
+            // chat 
+            if (textModel != null) {
+                // addMsg(textModel);
+                var chatMsg = new ChatItemUC(textModel) {
+                    Name = "chatMsg" + chatPanel.Controls.Count,
+                    Dock = DockStyle.Top
+                };
+
+                chatPanel.Invoke((MethodInvoker)(() => {
+                    chatPanel.Controls.Add(chatMsg);
+                    chatPanel.ScrollControlIntoView(chatMsg);
+                }));
+
+                chatMsg.Invoke((MethodInvoker)(() => chatMsg.BringToFront()));
+            }
+
+        }
+
         private void backBtn_Click(object sender, EventArgs e) {
-            BackBtnClick?.Invoke();
+            BackBtnClick?.Invoke(this, username);
         }
 
         private void addMsg(IChatModel textModel) {
@@ -27,7 +78,6 @@ namespace SpeakingChatbot.UserControls {
             var chatItem = new ChatItemUC(textModel) {
                 Name = "chatMsg" + chatPanel.Controls.Count,
                 Dock = DockStyle.Top,
-                Width = chatPanel.Width,
             };
 
             //chatItem.Dock = DockStyle.Fill;
@@ -59,7 +109,7 @@ namespace SpeakingChatbot.UserControls {
                 if (textModel != null) {
                     addMsg(textModel);
                     msgBox.Text = string.Empty;
-                    // connectClient.SendMsgToServer(msg);
+                    client.SendMsgToServer(msg, username, username);
                 }
 
             } catch (Exception err) {
@@ -73,5 +123,7 @@ namespace SpeakingChatbot.UserControls {
                 addMsg(textModel);
             }
         }
+
+
     }
 }

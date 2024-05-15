@@ -8,7 +8,6 @@ namespace SpeakingChatbot.Models {
     internal class UserModel {
 
         // change to int id primary key in db
-        public string Id { get; set; }
         public string UserName { get; set; }
 /*        public string Name { get; set; }
         public string Email { get; set; }

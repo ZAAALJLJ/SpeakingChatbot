@@ -18,21 +18,17 @@ namespace ChatServer {
         private string msgFromGemini;
         private string msgToGemini;
         public string userName { get; set; }
-        public Guid UID { get; set; }
-        public int id { get; set; }
         public TcpClient clientSocket { get; set; }
 
         Net.IO.PacketReader packetReader;
 
         public Client(TcpClient client) {
             clientSocket = client;
-            UID = Guid.NewGuid();
 
             packetReader = new Net.IO.PacketReader(clientSocket.GetStream());
 
             var opCode = packetReader.ReadByte();
             userName = packetReader.ReadMsg();
-
 
             Console.WriteLine($"[{DateTime.Now}]: {userName} has connected");
 
@@ -46,20 +42,28 @@ namespace ChatServer {
 
                     switch(opCode) {
                         case 5:
+                            var senderUser = packetReader.ReadMsg();
+                            var receivingUser = packetReader.ReadMsg();
                             var msg = packetReader.ReadMsg();
-                            Console.WriteLine($"[{DateTime.Now}]: message received: {msg} from {UID}");
 
-                            Server.BroadcastMsg(msg, UID.ToString());
+                            Console.WriteLine($"[{DateTime.Now}]: message received: {msg} from {senderUser} to {receivingUser}");
 
-                            // dito icall nalang si gemini bot
-                            msgToGemini = checkMsgInput(msg);
+                            Server.BroadcastMsg(senderUser, receivingUser, msg);
+                            
+                            if(senderUser == receivingUser) {
+                                msgToGemini = msg;
+                            } else {
+                                // dito icall nalang si gemini bot
+                                msgToGemini = checkMsgInput(msg);
+                            }
+
                             Console.WriteLine("msg to gemini {0}", msgToGemini);
 
                            
                             if (!string.IsNullOrWhiteSpace(msgToGemini)) {
                                 msgFromGemini = await GeminiAPI.SendRequestAndGetResponse(msgToGemini);
                                 Console.WriteLine(msgFromGemini);
-                                Server.BroadcastMsg(msgFromGemini, "waifu");
+                                Server.BroadcastMsg("@dahlia", receivingUser, msgFromGemini);
                             }
 
                             break;
@@ -68,8 +72,8 @@ namespace ChatServer {
 
                     }
                 } catch(Exception) {
-                    Console.WriteLine($"[{UID.ToString()}]: Disconnected");
-                    Server.BroadcastDisconnect(UID.ToString());
+                    Console.WriteLine($"[{userName}]: Disconnected");
+                    Server.BroadcastDisconnect(userName);
                     clientSocket.Close();
                     break;
                 }
@@ -83,23 +87,23 @@ namespace ChatServer {
             msgFromUser = msg.Split(" ", 2, System.StringSplitOptions.RemoveEmptyEntries);
             Console.WriteLine("aaaaaaaaa {0}", msgFromUser[0]);
 
-            if (msgFromUser[0] == "@waifu") {
+            if (msgFromUser[0] == "@dahlia") {
                 Console.WriteLine("calling waifuuu");
 
                 // if (calledWaifu[0] == "@waifu")
                 try {
                     // question
-                    Debug.WriteLine(msgFromUser[1]);
+                    Console.WriteLine(msgFromUser[1]);
 
                     msgToGemini = msgFromUser[1];
                 } catch (Exception ex) {
                     // call waifu lang no msg
-                    Debug.WriteLine("No question");
+                    Console.WriteLine("No question");
 
                     string[] wakeWaifu = { "hi", "hello", "hey", "you there? " };
                     Random random = new Random();
                     int randomIndex = random.Next(0, wakeWaifu.Length);
-                    Debug.WriteLine(wakeWaifu[randomIndex]);
+                    Console.WriteLine(wakeWaifu[randomIndex]);
 
                     msgToGemini = wakeWaifu[randomIndex];
                 }

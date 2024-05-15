@@ -38,8 +38,8 @@
             forumsRightTbl = new TableLayoutPanel();
             titleTbl = new TableLayoutPanel();
             forumsLbl = new PictureBox();
-            forumsPanel = new Panel();
             backBtn = new PictureBox();
+            forumsPanel = new Panel();
             forumsTbl.SuspendLayout();
             forumsLeftTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)uploadBtn).BeginInit();
@@ -75,6 +75,7 @@
             forumsTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             forumsTbl.Size = new Size(960, 540);
             forumsTbl.TabIndex = 0;
+            forumsTbl.Paint += forumsTbl_Paint;
             // 
             // forumsLeftTbl
             // 
@@ -283,18 +284,6 @@
             forumsLbl.TabIndex = 0;
             forumsLbl.TabStop = false;
             // 
-            // forumsPanel
-            // 
-            forumsPanel.AutoSize = true;
-            forumsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            forumsPanel.BackColor = Color.FromArgb(200, 0, 0, 0);
-            forumsPanel.Dock = DockStyle.Fill;
-            forumsPanel.Location = new Point(0, 91);
-            forumsPanel.Margin = new Padding(0);
-            forumsPanel.Name = "forumsPanel";
-            forumsPanel.Size = new Size(653, 432);
-            forumsPanel.TabIndex = 1;
-            // 
             // backBtn
             // 
             backBtn.Dock = DockStyle.Fill;
@@ -306,6 +295,18 @@
             backBtn.TabIndex = 1;
             backBtn.TabStop = false;
             backBtn.Click += backBtn_Click;
+            // 
+            // forumsPanel
+            // 
+            forumsPanel.AutoSize = true;
+            forumsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            forumsPanel.BackColor = Color.FromArgb(200, 0, 0, 0);
+            forumsPanel.Dock = DockStyle.Fill;
+            forumsPanel.Location = new Point(0, 91);
+            forumsPanel.Margin = new Padding(0);
+            forumsPanel.Name = "forumsPanel";
+            forumsPanel.Size = new Size(653, 432);
+            forumsPanel.TabIndex = 1;
             // 
             // ForumsUC
             // 

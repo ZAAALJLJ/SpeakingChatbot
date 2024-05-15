@@ -16,6 +16,7 @@ internal static class Program {
         ApplicationConfiguration.Initialize();
         // Form1 mainForm = new Form1();
         Chavatar mainForm = new Chavatar();
+        // MainForm mainForm = new MainForm();
         AudioDetector audioDetector = new AudioDetector();
 
         /*mainForm.UserInputEntered += (sender, userInput) => {

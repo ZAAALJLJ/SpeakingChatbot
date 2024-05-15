@@ -10,9 +10,9 @@ namespace SpeakingChatbot
     {
         private static string[] imagePaths = new string[]
         {
-            "..\\..\\..\\assets\\Speak1.jpg",
-            "..\\..\\..\\assets\\Speak2.jpg",
-            "..\\..\\..\\assets\\Speak3.jpg"
+            "..\\..\\..\\assets\\Speak1.png",
+            "..\\..\\..\\assets\\Speak2.png",
+            "..\\..\\..\\assets\\Speak3.png"
         };
         private static int currentImageIndex = 0;
         private static Timer timer;
@@ -82,8 +82,8 @@ namespace SpeakingChatbot
         {
             string[] idleImagePaths = new string[]
             {
-                "..\\..\\..\\assets\\Idle1.jpg",
-                "..\\..\\..\\assets\\Idle2.jpg"
+                "..\\..\\..\\assets\\Idle1.png",
+                "..\\..\\..\\assets\\Idle2.png"
             };
 
             int idleImageIndex = 0;

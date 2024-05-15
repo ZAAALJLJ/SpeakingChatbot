@@ -193,16 +193,6 @@ namespace SpeakingChatbot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap currently_online_label {
-            get {
-                object obj = ResourceManager.GetObject("currently online label", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dahlia {
             get {
                 object obj = ResourceManager.GetObject("dahlia", resourceCulture);
@@ -286,6 +276,16 @@ namespace SpeakingChatbot.Properties {
         internal static System.Drawing.Bitmap get_started_label {
             get {
                 object obj = ResourceManager.GetObject("get started label", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Idle1 {
+            get {
+                object obj = ResourceManager.GetObject("Idle1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -616,6 +616,16 @@ namespace SpeakingChatbot.Properties {
         internal static System.Drawing.Bitmap username_label {
             get {
                 object obj = ResourceManager.GetObject("username label", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users {
+            get {
+                object obj = ResourceManager.GetObject("users", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

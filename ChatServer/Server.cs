@@ -8,6 +8,9 @@ using System.Reflection.Metadata;
 namespace ChatServer {
 
     internal class Server {
+
+        // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
+        // static string address = "192.168.1.13";
         static string address = "127.0.0.1";
         static int port = 8080;
 
@@ -48,7 +51,6 @@ namespace ChatServer {
                     var broadcastPacket = new Net.IO.PacketBuilder();
                     broadcastPacket.WriteOpCode(1);
                     broadcastPacket.WriteMsg(client1.userName);
-                    broadcastPacket.WriteMsg(client1.UID.ToString());
                     client.clientSocket.Client.Send(broadcastPacket.GetPacketBytes());
                 }
             }
@@ -62,31 +64,33 @@ namespace ChatServer {
             msgPacket.WriteMsg(SenderUID);
             msgPacket.WriteMsg(msg);
 
-            var receiverUser = clients.Where(x => x.UID.ToString() == ReceiverUID).FirstOrDefault();
+            var receiverUser = clients.Where(x => x.userName == ReceiverUID).FirstOrDefault();
             receiverUser.clientSocket.Client.Send(msgPacket.GetPacketBytes());
         }
 
 
         // send to all
-        public static void BroadcastMsg(string msg, string SenderUID) {
+        public static void BroadcastMsg(string senderUser, string recevingUser, string msg) {
             foreach(var client in clients) {
-                Console.WriteLine(SenderUID);
-
-
-
-                if (client.UID.ToString() != SenderUID) {
+                if (client.userName != senderUser) {
                     var msgPacket = new Net.IO.PacketBuilder();
                     msgPacket.WriteOpCode(5);
-                    msgPacket.WriteMsg(SenderUID);
+                    msgPacket.WriteMsg(senderUser);
+                    msgPacket.WriteMsg(recevingUser);
                     msgPacket.WriteMsg(msg);
+
+
+                    Console.WriteLine(senderUser);
+                    Console.WriteLine(recevingUser);
+                    Console.WriteLine(msg);
                     client.clientSocket.Client.Send(msgPacket.GetPacketBytes());
                 }
             }
         }
 
-        public static void BroadcastDisconnect(string UID) {
+        public static void BroadcastDisconnect(string userName) {
 
-            var disconnectedUser = clients.Where(x => x.UID.ToString() == UID).FirstOrDefault();
+            var disconnectedUser = clients.Where(x => x.userName == userName).FirstOrDefault();
 
             clients.Remove(disconnectedUser);
 
@@ -94,11 +98,11 @@ namespace ChatServer {
                 var broadcastPacket = new PacketBuilder();
                 // opcode for user disconnect is 10
                 broadcastPacket.WriteOpCode(10);
-                broadcastPacket.WriteMsg(UID);
+                broadcastPacket.WriteMsg(userName);
                 client.clientSocket.Client.Send(broadcastPacket.GetPacketBytes());
             }
 
-            BroadcastMsg($"[{disconnectedUser.userName}] Disconnected", UID);
+            BroadcastMsg(userName, "@everyone", $"[{disconnectedUser.userName}] Disconnected");
         }
     }
 }
