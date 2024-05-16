@@ -278,6 +278,7 @@
             DoubleBuffered = true;
             Name = "SignUpUC";
             Size = new Size(1280, 720);
+            Resize += SignUpUC_Resize;
             signUpTbl.ResumeLayout(false);
             titleTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)signUpLbl).EndInit();

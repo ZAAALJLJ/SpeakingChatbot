@@ -10,8 +10,8 @@ namespace ChatServer {
     internal class Server {
 
         // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
-        // static string address = "192.168.18.77";
-        static string address = "127.0.0.1";
+        static string address = "192.168.18.77";
+        // static string address = "127.0.0.1";
         static int port = 8080;
 
         static TcpListener listener;

@@ -16,8 +16,19 @@ namespace SpeakingChatbot.UserControls {
             InitializeComponent();
         }
 
+        private void AdjustFontSize() {
+            float newSize = this.Width * 0.015f;
+            if (newSize < 1) {
+                newSize = 1;
+            }
+            usernameTextBox.Font = new Font(usernameTextBox.Font.FontFamily, newSize);
+            passwordTextBox.Font = new Font(passwordTextBox.Font.FontFamily, newSize);
+            cPasswordTextBox.Font = new Font(cPasswordTextBox.Font.FontFamily, newSize);
+        }
+
+
         private void enterBtn_Click(object sender, EventArgs e) {
-   
+
 
             var username = usernameTextBox.Text;
             var password = passwordTextBox.Text;
@@ -34,9 +45,9 @@ namespace SpeakingChatbot.UserControls {
                 Crud crud = new Crud();
 
                 if (true) {
-                    errorMsg.BackColor = Color.Red;
+                    /*errorMsg.BackColor = Color.Red;
                     errorMsg.Text = "Username is already taken.";
-                    errorMsg.Visible = true;
+                    errorMsg.Visible = true;*/
                 }
                 if (password != cPassword) {
                     errorMsg.BackColor = Color.Red;
@@ -48,10 +59,10 @@ namespace SpeakingChatbot.UserControls {
 
                 // kahulihan pag success na pag sign in
                 // add db
-                errorMsg.BackColor = Color.Lime;
+               /* errorMsg.BackColor = Color.Lime;
                 errorMsg.Text = "Signed up successfully";
                 errorMsg.Visible = true;
-
+*/
                 // count 5 before proceed sa login page
 
                 SignUpEnterClick?.Invoke();
@@ -63,5 +74,8 @@ namespace SpeakingChatbot.UserControls {
             }
         }
 
+        private void SignUpUC_Resize(object sender, EventArgs e) {
+            AdjustFontSize();
+        }
     }
 }
