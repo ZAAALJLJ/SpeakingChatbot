@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatItemUC));
             chatTbl = new TableLayoutPanel();
             profilePic = new PictureBox();
             chatMsg = new Label();
@@ -48,16 +47,16 @@
             chatTbl.Name = "chatTbl";
             chatTbl.RowCount = 1;
             chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            chatTbl.Size = new Size(760, 126);
+            chatTbl.Size = new Size(911, 50);
             chatTbl.TabIndex = 0;
             // 
             // profilePic
             // 
             profilePic.Dock = DockStyle.Bottom;
-            profilePic.Image = Properties.Resources.forumicon;
-            profilePic.Location = new Point(3, 91);
+            profilePic.Image = Properties.Resources.Idle1;
+            profilePic.Location = new Point(3, 15);
             profilePic.Name = "profilePic";
-            profilePic.Size = new Size(32, 32);
+            profilePic.Size = new Size(39, 32);
             profilePic.SizeMode = PictureBoxSizeMode.StretchImage;
             profilePic.TabIndex = 0;
             profilePic.TabStop = false;
@@ -66,13 +65,13 @@
             // 
             chatMsg.AutoSize = true;
             chatMsg.BackColor = SystemColors.ActiveCaption;
-            chatMsg.Dock = DockStyle.Right;
-            chatMsg.Location = new Point(384, 3);
-            chatMsg.Margin = new Padding(3);
+            chatMsg.Location = new Point(454, 5);
+            chatMsg.Margin = new Padding(0, 5, 0, 5);
             chatMsg.Name = "chatMsg";
-            chatMsg.Size = new Size(335, 120);
+            chatMsg.Padding = new Padding(3);
+            chatMsg.Size = new Size(38, 26);
             chatMsg.TabIndex = 1;
-            chatMsg.Text = resources.GetString("chatMsg.Text");
+            chatMsg.Text = "asd";
             chatMsg.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // ChatItemUC
@@ -82,8 +81,10 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Transparent;
             Controls.Add(chatTbl);
+            Margin = new Padding(0);
+            MinimumSize = new Size(0, 50);
             Name = "ChatItemUC";
-            Size = new Size(760, 126);
+            Size = new Size(911, 50);
             chatTbl.ResumeLayout(false);
             chatTbl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePic).EndInit();

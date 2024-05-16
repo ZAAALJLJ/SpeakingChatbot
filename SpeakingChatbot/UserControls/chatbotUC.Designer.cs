@@ -1,4 +1,7 @@
-﻿namespace SpeakingChatbot.UserControls {
+﻿using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+
+namespace SpeakingChatbot.UserControls {
     partial class ChatbotUC {
         /// <summary> 
         /// Required designer variable.
@@ -9,6 +12,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        public void SetPictureBoxImage(Image image) {
+            avatar.Image = image;
+        }
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
@@ -33,7 +40,7 @@
             chatTbl = new TableLayoutPanel();
             chatBottomPanel = new TableLayoutPanel();
             sendBtn = new Button();
-            msgBox = new TextBox();
+            msgBox = new RichTextBox();
             chatPanelTbl = new TableLayoutPanel();
             chatPanel = new FlowLayoutPanel();
             chatbotTbl.SuspendLayout();
@@ -62,7 +69,7 @@
             chatbotTbl.RowCount = 1;
             chatbotTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             chatbotTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            chatbotTbl.Size = new Size(948, 569);
+            chatbotTbl.Size = new Size(1165, 737);
             chatbotTbl.TabIndex = 0;
             // 
             // botTbl
@@ -72,13 +79,13 @@
             botTbl.Controls.Add(topTbl, 0, 0);
             botTbl.Controls.Add(avatar, 0, 1);
             botTbl.Dock = DockStyle.Fill;
-            botTbl.Location = new Point(477, 3);
+            botTbl.Location = new Point(585, 3);
             botTbl.Name = "botTbl";
             botTbl.RowCount = 2;
             botTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             botTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             botTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            botTbl.Size = new Size(468, 563);
+            botTbl.Size = new Size(577, 731);
             botTbl.TabIndex = 0;
             // 
             // topTbl
@@ -96,17 +103,17 @@
             topTbl.RowCount = 2;
             topTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             topTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 95F));
-            topTbl.Size = new Size(462, 106);
+            topTbl.Size = new Size(571, 140);
             topTbl.TabIndex = 1;
             // 
             // meetDahlia
             // 
             meetDahlia.Dock = DockStyle.Fill;
             meetDahlia.Image = Properties.Resources.meet_dahlia_label;
-            meetDahlia.Location = new Point(23, 5);
+            meetDahlia.Location = new Point(28, 7);
             meetDahlia.Margin = new Padding(0);
             meetDahlia.Name = "meetDahlia";
-            meetDahlia.Size = new Size(300, 101);
+            meetDahlia.Size = new Size(371, 133);
             meetDahlia.SizeMode = PictureBoxSizeMode.StretchImage;
             meetDahlia.TabIndex = 2;
             meetDahlia.TabStop = false;
@@ -117,12 +124,12 @@
             backTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             backTbl.Controls.Add(backBtn, 0, 0);
             backTbl.Dock = DockStyle.Fill;
-            backTbl.Location = new Point(349, 8);
+            backTbl.Location = new Point(430, 10);
             backTbl.Name = "backTbl";
             backTbl.RowCount = 2;
             backTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 53F));
             backTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 47F));
-            backTbl.Size = new Size(110, 95);
+            backTbl.Size = new Size(138, 127);
             backTbl.TabIndex = 1;
             // 
             // backBtn
@@ -132,7 +139,7 @@
             backBtn.Location = new Point(0, 0);
             backBtn.Margin = new Padding(0);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(110, 50);
+            backBtn.Size = new Size(138, 67);
             backBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             backBtn.TabIndex = 0;
             backBtn.TabStop = false;
@@ -143,9 +150,9 @@
             avatar.BackColor = Color.Transparent;
             avatar.Dock = DockStyle.Fill;
             avatar.Image = Properties.Resources.Idle1;
-            avatar.Location = new Point(3, 115);
+            avatar.Location = new Point(3, 149);
             avatar.Name = "avatar";
-            avatar.Size = new Size(462, 445);
+            avatar.Size = new Size(571, 579);
             avatar.SizeMode = PictureBoxSizeMode.StretchImage;
             avatar.TabIndex = 0;
             avatar.TabStop = false;
@@ -162,9 +169,9 @@
             chatTbl.Margin = new Padding(20);
             chatTbl.Name = "chatTbl";
             chatTbl.RowCount = 2;
-            chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 92F));
-            chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
-            chatTbl.Size = new Size(434, 529);
+            chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 93F));
+            chatTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 7F));
+            chatTbl.Size = new Size(542, 697);
             chatTbl.TabIndex = 1;
             // 
             // chatBottomPanel
@@ -177,12 +184,12 @@
             chatBottomPanel.Controls.Add(sendBtn, 1, 0);
             chatBottomPanel.Controls.Add(msgBox, 0, 0);
             chatBottomPanel.Dock = DockStyle.Fill;
-            chatBottomPanel.Location = new Point(0, 486);
+            chatBottomPanel.Location = new Point(0, 648);
             chatBottomPanel.Margin = new Padding(0);
             chatBottomPanel.Name = "chatBottomPanel";
             chatBottomPanel.RowCount = 1;
             chatBottomPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            chatBottomPanel.Size = new Size(434, 43);
+            chatBottomPanel.Size = new Size(542, 49);
             chatBottomPanel.TabIndex = 0;
             // 
             // sendBtn
@@ -193,9 +200,9 @@
             sendBtn.FlatStyle = FlatStyle.Flat;
             sendBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             sendBtn.ForeColor = Color.White;
-            sendBtn.Location = new Point(337, 3);
+            sendBtn.Location = new Point(420, 3);
             sendBtn.Name = "sendBtn";
-            sendBtn.Size = new Size(94, 37);
+            sendBtn.Size = new Size(119, 43);
             sendBtn.TabIndex = 0;
             sendBtn.Text = "Send";
             sendBtn.UseVisualStyleBackColor = true;
@@ -204,12 +211,12 @@
             // msgBox
             // 
             msgBox.Dock = DockStyle.Fill;
-            msgBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            msgBox.Location = new Point(5, 5);
-            msgBox.Margin = new Padding(5);
+            msgBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            msgBox.Location = new Point(3, 3);
             msgBox.Name = "msgBox";
-            msgBox.Size = new Size(324, 30);
+            msgBox.Size = new Size(411, 43);
             msgBox.TabIndex = 1;
+            msgBox.Text = "";
             // 
             // chatPanelTbl
             // 
@@ -225,16 +232,17 @@
             chatPanelTbl.RowCount = 1;
             chatPanelTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             chatPanelTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            chatPanelTbl.Size = new Size(428, 480);
+            chatPanelTbl.Size = new Size(536, 642);
             chatPanelTbl.TabIndex = 1;
             // 
             // chatPanel
             // 
+            chatPanel.AutoScroll = true;
             chatPanel.BackColor = Color.Transparent;
             chatPanel.Dock = DockStyle.Fill;
-            chatPanel.Location = new Point(7, 3);
+            chatPanel.Location = new Point(8, 3);
             chatPanel.Name = "chatPanel";
-            chatPanel.Size = new Size(413, 474);
+            chatPanel.Size = new Size(519, 636);
             chatPanel.TabIndex = 0;
             // 
             // ChatbotUC
@@ -245,7 +253,8 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(chatbotTbl);
             Name = "ChatbotUC";
-            Size = new Size(948, 569);
+            Size = new Size(1165, 737);
+            Resize += ChatbotUC_Resize;
             chatbotTbl.ResumeLayout(false);
             botTbl.ResumeLayout(false);
             topTbl.ResumeLayout(false);
@@ -269,11 +278,11 @@
         private TableLayoutPanel chatTbl;
         private TableLayoutPanel chatBottomPanel;
         private Button sendBtn;
-        private TextBox msgBox;
         private TableLayoutPanel backTbl;
         private PictureBox backBtn;
         private PictureBox meetDahlia;
         private TableLayoutPanel chatPanelTbl;
         private FlowLayoutPanel chatPanel;
+        private RichTextBox msgBox;
     }
 }

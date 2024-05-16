@@ -23,9 +23,7 @@ namespace ChatServer.Bot {
                     ""maxOutputTokens"": 4096,
                     ""stopSequences"": []
                 }},
-                ""safetySettings"": [
-
-                ]
+                ""safetySettings"": []
             }}";
 
             using (var client = new HttpClient()) {
@@ -37,12 +35,29 @@ namespace ChatServer.Bot {
 
                 if (response.IsSuccessStatusCode) {
                     string responseBody = await response.Content.ReadAsStringAsync();
-                    return responseBody.Substring(responseBody.IndexOf("\"text\": \"") + 9, responseBody.IndexOf("\"", responseBody.IndexOf("\"text\": \"") + 10) - responseBody.IndexOf("\"text\": \"") - 9);
+                    string aiResponse = ExtractAiResponse(responseBody);
+                    string cleansedOutput = CleanseOutput(aiResponse);
+                    return cleansedOutput;
                 } else {
-                    // MessageBox.Show("Error1");
                     return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
                 }
             }
+        }
+        private static string CleanseOutput(string output) {
+            output = output.Replace("\\n", " ");
+            output = output.Replace("\\n*", "");
+            output = output.Replace("\\n\\n", "");
+            output = output.Replace("##", "");
+            output = output.Replace("??", "");
+
+            return output;
+        }
+
+        private static string ExtractAiResponse(string responseBody) {
+
+            var startIndex = responseBody.IndexOf("\"text\": \"") + 9;
+            var endIndex = responseBody.IndexOf("\"", startIndex);
+            return responseBody.Substring(startIndex, endIndex - startIndex);
         }
     }
 }

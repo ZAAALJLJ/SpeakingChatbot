@@ -31,15 +31,12 @@
             titleTbl = new TableLayoutPanel();
             titleLbl = new PictureBox();
             continueTbl = new TableLayoutPanel();
-            continueLbl = new PictureBox();
             loginTbl.SuspendLayout();
             midTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)loginBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)signUpBtn).BeginInit();
             titleTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)titleLbl).BeginInit();
-            continueTbl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)continueLbl).BeginInit();
             SuspendLayout();
             // 
             // loginTbl
@@ -157,7 +154,6 @@
             continueTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
             continueTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68F));
             continueTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
-            continueTbl.Controls.Add(continueLbl, 1, 1);
             continueTbl.Dock = DockStyle.Fill;
             continueTbl.Location = new Point(0, 336);
             continueTbl.Margin = new Padding(0);
@@ -168,19 +164,6 @@
             continueTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             continueTbl.Size = new Size(720, 144);
             continueTbl.TabIndex = 4;
-            // 
-            // continueLbl
-            // 
-            continueLbl.BackColor = Color.Transparent;
-            continueLbl.Dock = DockStyle.Fill;
-            continueLbl.Image = Properties.Resources.clicktocontinue;
-            continueLbl.Location = new Point(115, 50);
-            continueLbl.Margin = new Padding(0);
-            continueLbl.Name = "continueLbl";
-            continueLbl.Size = new Size(489, 43);
-            continueLbl.SizeMode = PictureBoxSizeMode.StretchImage;
-            continueLbl.TabIndex = 0;
-            continueLbl.TabStop = false;
             // 
             // LoginSignUpUC
             // 
@@ -201,8 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)signUpBtn).EndInit();
             titleTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)titleLbl).EndInit();
-            continueTbl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)continueLbl).EndInit();
             ResumeLayout(false);
         }
 

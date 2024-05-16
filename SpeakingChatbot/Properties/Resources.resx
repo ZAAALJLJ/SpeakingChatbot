@@ -118,80 +118,170 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="forums" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forums.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="meet dahlia label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meet dahlia label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="submit button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\submit button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sdg6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="signupbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signupbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\description.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="event" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\event.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sdg15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sdg15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Log in and signup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Log in and signup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="uploadbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uploadbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="researcharticletag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\researcharticletag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="apply button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\apply button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forumsLbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forumsLbl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forums" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forums.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clear button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clear button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CHAVATARtitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CHAVATARtitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chatbotbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chatbotbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="others" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\others.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="onlinechatbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\onlinechatbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="confirm password label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirm password label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sdg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dahlia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dahlia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="submit button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\submit button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Idle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="questiontag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\questiontag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eventtag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eventtag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forumsLbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forumsLbl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\description.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clear button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clear button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signupbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signupbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newstag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newstag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Log in and signup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Log in and signup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forumsbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forumsbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="start2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="get started label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\get started label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password label" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sdg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="research" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\research.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forumicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forumicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="onlinechaticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\onlinechaticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirm password label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirm password label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="categories" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categories.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="username label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\username label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sdg10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sdg10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,94 +289,46 @@
   <data name="chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forumicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forumicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dahliaclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dahliaclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg17" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dahlia (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dahlia (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forumsbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forumsbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loginbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="username label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\username label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clicktocontinue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clicktocontinue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dahlia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dahlia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="meet dahlia label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\meet dahlia label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\main menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Idle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdg11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chats label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chats label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="onlinechaticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\onlinechaticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sdg9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="start1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\start1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uploadbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uploadbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="start2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clicktocontinue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clicktocontinue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sdg13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdg13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="get started label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\get started label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CHAVATARtitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHAVATARtitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apply button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guidetag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guidetag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chatboticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chatboticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chatbotbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chatbotbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdg16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdg16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chats label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chats label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usersclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usersclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

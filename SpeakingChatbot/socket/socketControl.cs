@@ -75,7 +75,7 @@ namespace SpeakingChatbot.socket {
 
             // store sa env
             // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
-            // string address = "192.168.1.13";
+            // string address = "192.168.18.77";
             string address = "127.0.0.1";
             int port = 8080;
 

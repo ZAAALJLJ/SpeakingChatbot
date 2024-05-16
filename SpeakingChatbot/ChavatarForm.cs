@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Diagnostics;
 using SpeakingChatbot.socket;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SpeakingChatbot {
 
@@ -38,7 +39,6 @@ namespace SpeakingChatbot {
         public Chavatar() {
             InitializeComponent();
             WelcomeUC();
-            // FormUC();
         }
 
 
@@ -85,6 +85,7 @@ namespace SpeakingChatbot {
         }
 
         protected void MainMenuUC(object? sender, string username) {
+            currentUser = username;
             mainMenuUC = new MainMenuUC(username);
             mainMenuUC.ChatbotClick += ChatbotUC;
             mainMenuUC.ChatClick += ChatUC;
@@ -117,6 +118,7 @@ namespace SpeakingChatbot {
             forumUC = new ForumsUC(username);
             forumUC.UploadClick += ForumsFormUC;
             forumUC.BackBtnClick += MainMenuUC;
+            forumUC.ViewFormClick += FormUC;
 
             MainPanel.Controls.Clear();
             forumUC.Dock = DockStyle.Fill;
@@ -132,12 +134,17 @@ namespace SpeakingChatbot {
             MainPanel.Controls.Add(forumsFormUC);
         }
 
-        protected void FormUC() {
-            formUC = new FormUC();
+        protected void FormUC(object? sender, int postId) {
+            formUC = new FormUC(currentUser, postId);
+            formUC.BackBtnClick += backToForum;
 
             MainPanel.Controls.Clear();
             formUC.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(formUC);
+        }
+
+        protected void backToForum(object? sender, string empty) {
+            ForumUC(this, currentUser);
         }
     }
 }

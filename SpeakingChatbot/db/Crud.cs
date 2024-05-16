@@ -16,6 +16,10 @@ namespace SpeakingChatbot.db {
 
         string currentIpAddress;
 
+        public event EventHandler<string[]> createFormItemEvent;
+
+        public event EventHandler<int[]> displaySdg;
+
         FormItemUC formItem;
 
         public Crud() {
@@ -109,7 +113,7 @@ namespace SpeakingChatbot.db {
             return username;
         }
 
-        public void createForm(string userName, string title, string category, string description, string filePath = null) {
+        public void createForm(string userName, string title, string category, string description, int[] sdgs, string filePath = null) {
             int userId = getUserByName(userName);
             string query;
 
@@ -136,12 +140,54 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Account created!");
+                MessageBox.Show("Post created!");
             } catch (Exception ex) {
-                MessageBox.Show("Creating account not created: " + ex.Message);
+                MessageBox.Show("Post not created: " + ex.Message);
+            }
+
+            int postId = getNumPosts();
+
+            for(int i = 0; i < sdgs.Length; i++) {
+                addSdgs(postId, sdgs[i]);
             }
 
             db.closeConnection();
+        }
+
+        private void addSdgs(int postId, int sdg) {
+            string query;
+
+         
+            query = "INSERT INTO `post_sdg`(`postId`, `sdg`) VALUES (@pId, @SDG)";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            command.Parameters.Add("@pId", MySqlDbType.Int32).Value = postId;
+            command.Parameters.Add("@SDG", MySqlDbType.Int32).Value = sdg;
+
+            try {
+                command.ExecuteNonQuery();
+                MessageBox.Show("Sdg added!");
+            } catch (Exception ex) {
+                MessageBox.Show("sdg not added: " + ex.Message);
+            }
+        }
+
+        private int getNumPosts() {
+            string query = "select max(postId) from posts";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            try {
+                using (MySqlDataReader reader = command.ExecuteReader()) {
+                    if (reader.Read()) {
+                        return reader.GetInt32(0);
+                    }
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Creating account not created: " + ex.Message);
+            }
+            return 0;
         }
 
         public bool checkCredentials(string username, string password) {
@@ -205,9 +251,6 @@ namespace SpeakingChatbot.db {
             }
         }
 
-        public string getIpAddress(int id) {
-            return "";
-        }
 
         public string[] getUsers(string username, int isOnline) {
             string[] users;
@@ -341,6 +384,7 @@ namespace SpeakingChatbot.db {
         }
 
         public void getPosts() {
+
             string query = "SELECT `postId`, `userid`, `postTitle`, `postCategory`, `votes`, `createdAt` FROM `posts`";
 
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
@@ -349,28 +393,150 @@ namespace SpeakingChatbot.db {
 
             try {
                 using (MySqlDataReader reader = command.ExecuteReader()) {
-                    int postId = reader.GetInt32(0);
-                    int userId = reader.GetInt32(1);
-                    string postTitle = reader.GetString(2);
-                    string postCategory = reader.GetString(3);
-                    int votes = reader.GetInt32(4);
-                    string postCreated = reader.GetString(5);
+                    while (reader.Read()) {
 
-                    string username = getUserById(userId);
+                        int postId = reader.GetInt32(0);
+                        int userId = reader.GetInt32(1);
+                        string postTitle = reader.GetString(2);
+                        string postCategory = reader.GetString(3);
+                        int votes = reader.GetInt32(4);
+                        DateTime postCreated = reader.GetDateTime(5);
 
-                    formItem = new FormItemUC(postId, username, postTitle, postCategory, votes, postCreated) {
-                        Name = "post" + postId.ToString(),
-                        Dock = DockStyle.Top,
-                    };
+                        string[] postInfo = {
+                            postId.ToString(),
+                            userId.ToString(),
+                            postTitle,
+                            postCategory,
+                            votes.ToString(),
+                            postCreated.ToString(),
+                        };
+
+                       /* Debug.WriteLine(postId.ToString());
+                        Debug.WriteLine(userId.ToString());
+                        Debug.WriteLine(postTitle);
+                        Debug.WriteLine(postCategory);
+                        Debug.WriteLine(votes.ToString());
+                        Debug.WriteLine(postCreated.ToString());*/
+
+                        createFormItemEvent?.Invoke(this, postInfo);
+                    }
 
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error getPosts: ", ex.Message);
+                MessageBox.Show("Error getPosts: " + ex.Message);
+            }
+
+            db.closeConnection();
+        }
+
+
+        public string[] getPostById(int PostId) {
+            string[] postInfo = new string[8];
+
+            string query = "SELECT * FROM `posts` WHERE `postId` = @pId LIMIT 1";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            command.Parameters.Add("@pId", MySqlDbType.Int32).Value = PostId;
+
+            db.openConnection();
+
+            try {
+                using (MySqlDataReader reader = command.ExecuteReader()) {
+                    if (reader.Read()) {
+                        int postId = reader.GetInt32(0);
+                        int userId = reader.GetInt32(1);
+                        string postTitle = reader.GetString(2);
+                        string postCategory = reader.GetString(3);
+                        string postContent = reader.GetString(4);
+                        string file = reader.GetString(5);
+                        int votes = reader.GetInt32(6);
+                        DateTime postCreated = reader.GetDateTime(7);
+
+                        postInfo[0] = postId.ToString();
+                        postInfo[1] = userId.ToString();
+                        postInfo[2] = postTitle;
+                        postInfo[3] = postCategory;
+                        postInfo[4] = postContent;
+                        postInfo[5] = file;
+                        postInfo[6] = votes.ToString();
+                        postInfo[7] = postCreated.ToString();
+                    }
+
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error getPost by id: " + ex.Message);
+                using (MySqlDataReader reader = command.ExecuteReader()) {
+                    if (reader.Read()) {
+                        int postId = reader.GetInt32(0);
+                        int userId = reader.GetInt32(1);
+                        string postTitle = reader.GetString(2);
+                        string postCategory = reader.GetString(3);
+                        string postContent = reader.GetString(4);
+                        int votes = reader.GetInt32(6);
+                        DateTime postCreated = reader.GetDateTime(7);
+
+                        postInfo[0] = postId.ToString();
+                        postInfo[1] = userId.ToString();
+                        postInfo[2] = postTitle;
+                        postInfo[3] = postCategory;
+                        postInfo[4] = postContent;
+                        postInfo[6] = votes.ToString();
+                        postInfo[7] = postCreated.ToString();
+                    }
+                }
             }
 
             db.closeConnection();
 
-            // return formItem;
+            return postInfo;
+        }
+
+        public void filterPostSdg() {
+
+            // baguhin yung queryyyyy
+            string query = "SELECT `postId`, `userid`, `postTitle`, `postCategory`, `votes`, `createdAt` FROM `posts`";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            db.openConnection();
+
+            try {
+                using (MySqlDataReader reader = command.ExecuteReader()) {
+                    while (reader.Read()) {
+
+                        int postId = reader.GetInt32(0);
+                        int userId = reader.GetInt32(1);
+                        string postTitle = reader.GetString(2);
+                        string postCategory = reader.GetString(3);
+                        int votes = reader.GetInt32(4);
+                        DateTime postCreated = reader.GetDateTime(5);
+
+                        string[] postInfo = {
+                            postId.ToString(),
+                            userId.ToString(),
+                            postTitle,
+                            postCategory,
+                            votes.ToString(),
+                            postCreated.ToString(),
+                        };
+
+                        /* Debug.WriteLine(postId.ToString());
+                         Debug.WriteLine(userId.ToString());
+                         Debug.WriteLine(postTitle);
+                         Debug.WriteLine(postCategory);
+                         Debug.WriteLine(votes.ToString());
+                         Debug.WriteLine(postCreated.ToString());*/
+
+                        createFormItemEvent?.Invoke(this, postInfo);
+                    }
+
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error getPosts: " + ex.Message);
+            }
+
+            db.closeConnection();
         }
     }
 }

@@ -24,25 +24,23 @@
         /// </summary>
         private void InitializeComponent() {
             forumsTbl = new TableLayoutPanel();
-            forumsLeftTbl = new TableLayoutPanel();
-            uploadBtn = new PictureBox();
             filterTbl = new TableLayoutPanel();
             clearBtn = new PictureBox();
             applyBtn = new PictureBox();
             filterBtnTbl = new TableLayoutPanel();
             sdgBtn = new PictureBox();
             categoryBtn = new PictureBox();
-            sdgPanel = new Panel();
             filterLblTbl = new TableLayoutPanel();
             filterLbl = new PictureBox();
+            sdgCatPanel = new Panel();
             forumsRightTbl = new TableLayoutPanel();
             titleTbl = new TableLayoutPanel();
             forumsLbl = new PictureBox();
             backBtn = new PictureBox();
-            forumsPanel = new Panel();
+            formTbl = new TableLayoutPanel();
+            formPanel = new Panel();
+            uploadBtn = new PictureBox();
             forumsTbl.SuspendLayout();
-            forumsLeftTbl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)uploadBtn).BeginInit();
             filterTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)clearBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)applyBtn).BeginInit();
@@ -55,6 +53,8 @@
             titleTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)forumsLbl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
+            formTbl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)uploadBtn).BeginInit();
             SuspendLayout();
             // 
             // forumsTbl
@@ -65,7 +65,7 @@
             forumsTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24F));
             forumsTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3F));
             forumsTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            forumsTbl.Controls.Add(forumsLeftTbl, 1, 0);
+            forumsTbl.Controls.Add(filterTbl, 1, 0);
             forumsTbl.Controls.Add(forumsRightTbl, 3, 0);
             forumsTbl.Dock = DockStyle.Fill;
             forumsTbl.Location = new Point(0, 0);
@@ -75,53 +75,21 @@
             forumsTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             forumsTbl.Size = new Size(960, 540);
             forumsTbl.TabIndex = 0;
-            forumsTbl.Paint += forumsTbl_Paint;
-            // 
-            // forumsLeftTbl
-            // 
-            forumsLeftTbl.BackColor = Color.FromArgb(200, 0, 0, 0);
-            forumsLeftTbl.ColumnCount = 1;
-            forumsLeftTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            forumsLeftTbl.Controls.Add(uploadBtn, 0, 1);
-            forumsLeftTbl.Controls.Add(filterTbl, 0, 0);
-            forumsLeftTbl.Dock = DockStyle.Fill;
-            forumsLeftTbl.Location = new Point(31, 8);
-            forumsLeftTbl.Margin = new Padding(3, 8, 3, 8);
-            forumsLeftTbl.Name = "forumsLeftTbl";
-            forumsLeftTbl.RowCount = 2;
-            forumsLeftTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 88F));
-            forumsLeftTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
-            forumsLeftTbl.Size = new Size(224, 524);
-            forumsLeftTbl.TabIndex = 0;
-            // 
-            // uploadBtn
-            // 
-            uploadBtn.Dock = DockStyle.Fill;
-            uploadBtn.ErrorImage = Properties.Resources.uploadbutton;
-            uploadBtn.Image = Properties.Resources.uploadbutton;
-            uploadBtn.InitialImage = Properties.Resources.uploadbutton;
-            uploadBtn.Location = new Point(3, 464);
-            uploadBtn.Name = "uploadBtn";
-            uploadBtn.Size = new Size(218, 57);
-            uploadBtn.SizeMode = PictureBoxSizeMode.StretchImage;
-            uploadBtn.TabIndex = 0;
-            uploadBtn.TabStop = false;
-            uploadBtn.Click += uploadBtn_Click;
             // 
             // filterTbl
             // 
             filterTbl.AutoSize = true;
             filterTbl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            filterTbl.BackColor = Color.Transparent;
+            filterTbl.BackColor = Color.FromArgb(200, 0, 0, 0);
             filterTbl.ColumnCount = 1;
             filterTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             filterTbl.Controls.Add(clearBtn, 0, 4);
             filterTbl.Controls.Add(applyBtn, 0, 3);
             filterTbl.Controls.Add(filterBtnTbl, 0, 1);
-            filterTbl.Controls.Add(sdgPanel, 0, 2);
             filterTbl.Controls.Add(filterLblTbl, 0, 0);
+            filterTbl.Controls.Add(sdgCatPanel, 0, 2);
             filterTbl.Dock = DockStyle.Fill;
-            filterTbl.Location = new Point(3, 3);
+            filterTbl.Location = new Point(31, 3);
             filterTbl.Name = "filterTbl";
             filterTbl.RowCount = 5;
             filterTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
@@ -129,7 +97,7 @@
             filterTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 67F));
             filterTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
             filterTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
-            filterTbl.Size = new Size(218, 455);
+            filterTbl.Size = new Size(224, 534);
             filterTbl.TabIndex = 1;
             // 
             // clearBtn
@@ -138,9 +106,9 @@
             clearBtn.ErrorImage = Properties.Resources.clear_button;
             clearBtn.Image = Properties.Resources.clear_button;
             clearBtn.InitialImage = Properties.Resources.clear_button;
-            clearBtn.Location = new Point(3, 419);
+            clearBtn.Location = new Point(3, 492);
             clearBtn.Name = "clearBtn";
-            clearBtn.Size = new Size(212, 33);
+            clearBtn.Size = new Size(218, 39);
             clearBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             clearBtn.TabIndex = 0;
             clearBtn.TabStop = false;
@@ -151,12 +119,13 @@
             applyBtn.ErrorImage = Properties.Resources.apply_button;
             applyBtn.Image = Properties.Resources.apply_button;
             applyBtn.InitialImage = Properties.Resources.apply_button;
-            applyBtn.Location = new Point(3, 383);
+            applyBtn.Location = new Point(3, 450);
             applyBtn.Name = "applyBtn";
-            applyBtn.Size = new Size(212, 30);
+            applyBtn.Size = new Size(218, 36);
             applyBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             applyBtn.TabIndex = 1;
             applyBtn.TabStop = false;
+            applyBtn.Click += applyBtn_Click;
             // 
             // filterBtnTbl
             // 
@@ -167,61 +136,55 @@
             filterBtnTbl.Controls.Add(sdgBtn, 0, 1);
             filterBtnTbl.Controls.Add(categoryBtn, 1, 1);
             filterBtnTbl.Dock = DockStyle.Fill;
-            filterBtnTbl.Location = new Point(3, 39);
+            filterBtnTbl.Location = new Point(3, 45);
             filterBtnTbl.Name = "filterBtnTbl";
             filterBtnTbl.RowCount = 3;
             filterBtnTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             filterBtnTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             filterBtnTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            filterBtnTbl.Size = new Size(212, 34);
+            filterBtnTbl.Size = new Size(218, 42);
             filterBtnTbl.TabIndex = 3;
             // 
             // sdgBtn
             // 
             sdgBtn.Dock = DockStyle.Fill;
             sdgBtn.Image = Properties.Resources.sdg;
-            sdgBtn.Location = new Point(3, 6);
+            sdgBtn.Location = new Point(3, 7);
             sdgBtn.Name = "sdgBtn";
-            sdgBtn.Size = new Size(100, 21);
+            sdgBtn.Size = new Size(103, 27);
             sdgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             sdgBtn.TabIndex = 2;
             sdgBtn.TabStop = false;
+            sdgBtn.Click += sdgBtn_Click;
             // 
             // categoryBtn
             // 
             categoryBtn.Dock = DockStyle.Fill;
             categoryBtn.Image = Properties.Resources.categories;
-            categoryBtn.Location = new Point(109, 6);
+            categoryBtn.Location = new Point(112, 7);
             categoryBtn.Name = "categoryBtn";
-            categoryBtn.Size = new Size(100, 21);
+            categoryBtn.Size = new Size(103, 27);
             categoryBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             categoryBtn.TabIndex = 3;
             categoryBtn.TabStop = false;
-            // 
-            // sdgPanel
-            // 
-            sdgPanel.BackColor = Color.Transparent;
-            sdgPanel.Dock = DockStyle.Fill;
-            sdgPanel.Location = new Point(0, 76);
-            sdgPanel.Margin = new Padding(0);
-            sdgPanel.Name = "sdgPanel";
-            sdgPanel.Size = new Size(218, 304);
-            sdgPanel.TabIndex = 4;
+            categoryBtn.Click += categoryBtn_Click;
             // 
             // filterLblTbl
             // 
+            filterLblTbl.BackColor = Color.Transparent;
             filterLblTbl.ColumnCount = 3;
             filterLblTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             filterLblTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
             filterLblTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             filterLblTbl.Controls.Add(filterLbl, 1, 1);
+            filterLblTbl.Dock = DockStyle.Fill;
             filterLblTbl.Location = new Point(3, 3);
             filterLblTbl.Name = "filterLblTbl";
             filterLblTbl.RowCount = 3;
             filterLblTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             filterLblTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
             filterLblTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
-            filterLblTbl.Size = new Size(212, 30);
+            filterLblTbl.Size = new Size(218, 36);
             filterLblTbl.TabIndex = 5;
             // 
             // filterLbl
@@ -230,10 +193,18 @@
             filterLbl.Image = Properties.Resources.filter;
             filterLbl.Location = new Point(24, 4);
             filterLbl.Name = "filterLbl";
-            filterLbl.Size = new Size(163, 21);
+            filterLbl.Size = new Size(168, 26);
             filterLbl.SizeMode = PictureBoxSizeMode.StretchImage;
             filterLbl.TabIndex = 0;
             filterLbl.TabStop = false;
+            // 
+            // sdgCatPanel
+            // 
+            sdgCatPanel.Dock = DockStyle.Fill;
+            sdgCatPanel.Location = new Point(3, 93);
+            sdgCatPanel.Name = "sdgCatPanel";
+            sdgCatPanel.Size = new Size(218, 351);
+            sdgCatPanel.TabIndex = 6;
             // 
             // forumsRightTbl
             // 
@@ -241,7 +212,7 @@
             forumsRightTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 97F));
             forumsRightTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3F));
             forumsRightTbl.Controls.Add(titleTbl, 0, 1);
-            forumsRightTbl.Controls.Add(forumsPanel, 0, 2);
+            forumsRightTbl.Controls.Add(formTbl, 0, 2);
             forumsRightTbl.Dock = DockStyle.Fill;
             forumsRightTbl.Location = new Point(286, 0);
             forumsRightTbl.Margin = new Padding(0);
@@ -296,17 +267,45 @@
             backBtn.TabStop = false;
             backBtn.Click += backBtn_Click;
             // 
-            // forumsPanel
+            // formTbl
             // 
-            forumsPanel.AutoSize = true;
-            forumsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            forumsPanel.BackColor = Color.FromArgb(200, 0, 0, 0);
-            forumsPanel.Dock = DockStyle.Fill;
-            forumsPanel.Location = new Point(0, 91);
-            forumsPanel.Margin = new Padding(0);
-            forumsPanel.Name = "forumsPanel";
-            forumsPanel.Size = new Size(653, 432);
-            forumsPanel.TabIndex = 1;
+            formTbl.BackColor = Color.FromArgb(200, 0, 0, 0);
+            formTbl.ColumnCount = 2;
+            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            formTbl.Controls.Add(formPanel, 0, 1);
+            formTbl.Controls.Add(uploadBtn, 1, 0);
+            formTbl.Dock = DockStyle.Fill;
+            formTbl.Location = new Point(3, 94);
+            formTbl.Name = "formTbl";
+            formTbl.RowCount = 2;
+            formTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
+            formTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 88F));
+            formTbl.Size = new Size(647, 426);
+            formTbl.TabIndex = 1;
+            // 
+            // formPanel
+            // 
+            formPanel.AutoScroll = true;
+            formTbl.SetColumnSpan(formPanel, 2);
+            formPanel.Dock = DockStyle.Fill;
+            formPanel.Location = new Point(3, 54);
+            formPanel.Name = "formPanel";
+            formPanel.Size = new Size(641, 369);
+            formPanel.TabIndex = 0;
+            // 
+            // uploadBtn
+            // 
+            uploadBtn.BackColor = Color.Transparent;
+            uploadBtn.Dock = DockStyle.Fill;
+            uploadBtn.Image = Properties.Resources.uploadbutton;
+            uploadBtn.Location = new Point(520, 3);
+            uploadBtn.Name = "uploadBtn";
+            uploadBtn.Size = new Size(124, 45);
+            uploadBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            uploadBtn.TabIndex = 1;
+            uploadBtn.TabStop = false;
+            uploadBtn.Click += uploadBtn_Click;
             // 
             // ForumsUC
             // 
@@ -321,9 +320,7 @@
             Name = "ForumsUC";
             Size = new Size(960, 540);
             forumsTbl.ResumeLayout(false);
-            forumsLeftTbl.ResumeLayout(false);
-            forumsLeftTbl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)uploadBtn).EndInit();
+            forumsTbl.PerformLayout();
             filterTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)clearBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)applyBtn).EndInit();
@@ -333,10 +330,11 @@
             filterLblTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)filterLbl).EndInit();
             forumsRightTbl.ResumeLayout(false);
-            forumsRightTbl.PerformLayout();
             titleTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)forumsLbl).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
+            formTbl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)uploadBtn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -344,21 +342,22 @@
         #endregion
 
         private TableLayoutPanel forumsTbl;
-        private TableLayoutPanel forumsLeftTbl;
-        private PictureBox uploadBtn;
+        private TableLayoutPanel forumsRightTbl;
+        private TableLayoutPanel titleTbl;
+        private PictureBox forumsLbl;
+        private PictureBox backBtn;
+        private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel filterTbl;
         private PictureBox clearBtn;
         private PictureBox applyBtn;
         private TableLayoutPanel filterBtnTbl;
-        private Panel sdgPanel;
-        private TableLayoutPanel forumsRightTbl;
-        private TableLayoutPanel titleTbl;
-        private Panel forumsPanel;
         private PictureBox sdgBtn;
         private PictureBox categoryBtn;
         private TableLayoutPanel filterLblTbl;
         private PictureBox filterLbl;
-        private PictureBox forumsLbl;
-        private PictureBox backBtn;
+        private Panel sdgCatPanel;
+        private TableLayoutPanel formTbl;
+        private Panel formPanel;
+        private PictureBox uploadBtn;
     }
 }

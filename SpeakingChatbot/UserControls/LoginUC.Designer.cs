@@ -146,6 +146,7 @@
             // usernameTextBox
             // 
             usernameTextBox.Dock = DockStyle.Fill;
+            usernameTextBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             usernameTextBox.Location = new Point(664, 86);
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.Size = new Size(427, 41);
@@ -155,6 +156,7 @@
             // passwordTextBox
             // 
             passwordTextBox.Dock = DockStyle.Fill;
+            passwordTextBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             passwordTextBox.Location = new Point(664, 172);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(427, 41);
@@ -216,6 +218,7 @@
             DoubleBuffered = true;
             Name = "LoginUC";
             Size = new Size(1280, 720);
+            Click += LoginUC_Click;
             loginTbl.ResumeLayout(false);
             loginTbl.PerformLayout();
             titleTbl.ResumeLayout(false);

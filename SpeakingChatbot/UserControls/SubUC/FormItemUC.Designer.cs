@@ -24,16 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             usernameLbl = new Label();
-            lineLbl = new Label();
-            categoryLbl = new Label();
-            sdgLbl = new Label();
             topRightPanel = new Panel();
-            formTbl = new TableLayoutPanel();
+            categoryPic = new PictureBox();
             dateLbl = new Label();
+            formTbl = new TableLayoutPanel();
             contentPanel = new Panel();
             titleLbl = new Label();
             votesLbl = new Label();
             topRightPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)categoryPic).BeginInit();
             formTbl.SuspendLayout();
             contentPanel.SuspendLayout();
             SuspendLayout();
@@ -50,94 +49,74 @@
             usernameLbl.Text = "USERNAME";
             usernameLbl.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lineLbl
-            // 
-            lineLbl.AutoSize = true;
-            lineLbl.Dock = DockStyle.Right;
-            lineLbl.ForeColor = Color.White;
-            lineLbl.Location = new Point(126, 0);
-            lineLbl.Name = "lineLbl";
-            lineLbl.Size = new Size(13, 20);
-            lineLbl.TabIndex = 1;
-            lineLbl.Text = "|";
-            lineLbl.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // categoryLbl
-            // 
-            categoryLbl.AutoSize = true;
-            categoryLbl.BackColor = SystemColors.MenuHighlight;
-            categoryLbl.Dock = DockStyle.Right;
-            categoryLbl.ForeColor = Color.White;
-            categoryLbl.Location = new Point(139, 0);
-            categoryLbl.Name = "categoryLbl";
-            categoryLbl.Size = new Size(81, 20);
-            categoryLbl.TabIndex = 0;
-            categoryLbl.Text = "CATEGORY";
-            categoryLbl.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // sdgLbl
-            // 
-            sdgLbl.AutoSize = true;
-            sdgLbl.BackColor = SystemColors.MenuHighlight;
-            sdgLbl.Dock = DockStyle.Right;
-            sdgLbl.ForeColor = Color.White;
-            sdgLbl.Location = new Point(47, 0);
-            sdgLbl.Name = "sdgLbl";
-            sdgLbl.Size = new Size(79, 20);
-            sdgLbl.TabIndex = 2;
-            sdgLbl.Text = "SDGLABEL";
-            // 
             // topRightPanel
             // 
-            topRightPanel.Controls.Add(sdgLbl);
-            topRightPanel.Controls.Add(lineLbl);
-            topRightPanel.Controls.Add(categoryLbl);
+            topRightPanel.Controls.Add(categoryPic);
+            topRightPanel.Controls.Add(dateLbl);
             topRightPanel.Dock = DockStyle.Fill;
-            topRightPanel.Location = new Point(229, 3);
+            topRightPanel.Location = new Point(356, 5);
+            topRightPanel.Margin = new Padding(5);
             topRightPanel.Name = "topRightPanel";
-            topRightPanel.Size = new Size(220, 34);
+            topRightPanel.Size = new Size(341, 30);
             topRightPanel.TabIndex = 2;
             // 
-            // formTbl
+            // categoryPic
             // 
-            formTbl.ColumnCount = 2;
-            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            formTbl.Controls.Add(usernameLbl, 0, 0);
-            formTbl.Controls.Add(topRightPanel, 1, 0);
-            formTbl.Controls.Add(dateLbl, 1, 1);
-            formTbl.Controls.Add(contentPanel, 0, 2);
-            formTbl.Dock = DockStyle.Fill;
-            formTbl.Location = new Point(0, 0);
-            formTbl.Name = "formTbl";
-            formTbl.RowCount = 3;
-            formTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            formTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            formTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            formTbl.Size = new Size(452, 244);
-            formTbl.TabIndex = 0;
+            categoryPic.Dock = DockStyle.Right;
+            categoryPic.Image = Properties.Resources.guidetag;
+            categoryPic.Location = new Point(131, 0);
+            categoryPic.Margin = new Padding(3, 3, 10, 3);
+            categoryPic.Name = "categoryPic";
+            categoryPic.Size = new Size(125, 30);
+            categoryPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            categoryPic.TabIndex = 0;
+            categoryPic.TabStop = false;
             // 
             // dateLbl
             // 
             dateLbl.AutoSize = true;
             dateLbl.Dock = DockStyle.Right;
             dateLbl.ForeColor = Color.White;
-            dateLbl.Location = new Point(364, 40);
+            dateLbl.Location = new Point(256, 0);
+            dateLbl.Margin = new Padding(10, 0, 3, 0);
             dateLbl.Name = "dateLbl";
             dateLbl.Size = new Size(85, 20);
             dateLbl.TabIndex = 3;
             dateLbl.Text = "00-00-0000";
             // 
+            // formTbl
+            // 
+            formTbl.BackColor = Color.Transparent;
+            formTbl.ColumnCount = 2;
+            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            formTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            formTbl.Controls.Add(usernameLbl, 0, 0);
+            formTbl.Controls.Add(topRightPanel, 1, 0);
+            formTbl.Controls.Add(contentPanel, 0, 1);
+            formTbl.Dock = DockStyle.Fill;
+            formTbl.Location = new Point(0, 0);
+            formTbl.Margin = new Padding(5);
+            formTbl.Name = "formTbl";
+            formTbl.RowCount = 2;
+            formTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            formTbl.RowStyles.Add(new RowStyle());
+            formTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            formTbl.Size = new Size(702, 122);
+            formTbl.TabIndex = 0;
+            // 
             // contentPanel
             // 
+            contentPanel.AutoSize = true;
+            contentPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             formTbl.SetColumnSpan(contentPanel, 2);
             contentPanel.Controls.Add(titleLbl);
             contentPanel.Controls.Add(votesLbl);
             contentPanel.Dock = DockStyle.Fill;
-            contentPanel.Location = new Point(3, 63);
+            contentPanel.Location = new Point(3, 43);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(446, 178);
+            contentPanel.Size = new Size(696, 76);
             contentPanel.TabIndex = 4;
+            contentPanel.Click += contentPanel_Click;
             // 
             // titleLbl
             // 
@@ -150,18 +129,20 @@
             titleLbl.TabIndex = 1;
             titleLbl.Text = "TITLE";
             titleLbl.TextAlign = ContentAlignment.MiddleLeft;
+            titleLbl.Click += titleLbl_Click;
             // 
             // votesLbl
             // 
             votesLbl.AutoSize = true;
             votesLbl.Dock = DockStyle.Right;
             votesLbl.ForeColor = Color.White;
-            votesLbl.Location = new Point(429, 0);
+            votesLbl.Location = new Point(679, 0);
             votesLbl.Name = "votesLbl";
             votesLbl.Size = new Size(17, 20);
             votesLbl.TabIndex = 0;
             votesLbl.Text = "0";
             votesLbl.TextAlign = ContentAlignment.TopRight;
+            votesLbl.Resize += votesLbl_Resize;
             // 
             // FormItemUC
             // 
@@ -170,10 +151,11 @@
             BackColor = Color.Transparent;
             Controls.Add(formTbl);
             Name = "FormItemUC";
-            Size = new Size(452, 244);
+            Size = new Size(702, 122);
             Load += FormItemUC_Load;
             topRightPanel.ResumeLayout(false);
             topRightPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)categoryPic).EndInit();
             formTbl.ResumeLayout(false);
             formTbl.PerformLayout();
             contentPanel.ResumeLayout(false);
@@ -183,14 +165,15 @@
 
         #endregion
         private Label usernameLbl;
-        private Label lineLbl;
         private Label categoryLbl;
-        private Label sdgLbl;
         private Panel topRightPanel;
         private TableLayoutPanel formTbl;
         private Label dateLbl;
         private Panel contentPanel;
         private Label titleLbl;
         private Label votesLbl;
+        private Panel sdgPanel;
+        private PictureBox categoryPic;
+        private Label lineLbl;
     }
 }

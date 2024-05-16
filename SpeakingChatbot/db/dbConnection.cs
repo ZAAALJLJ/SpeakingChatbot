@@ -10,8 +10,9 @@ namespace SpeakingChatbot.db {
 
         private MySqlConnection connection;
 
-        private string connectionString = "server=127.0.0.1;port=3306;database=chavatar;user=dahlia;password=chavatar;";
-        
+        // private string connectionString = "server=192.168.18.77;port=3306;database=chavatar;user=dahlia;password=CHAVATAR-chavatar-12345;";
+        private string connectionString = "server=127.0.0.1;port=3306;database=chavatar;user=dahlia";
+
         public dbConnection() {
             // connect to db
             connection = new MySqlConnection(connectionString);

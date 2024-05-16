@@ -1,4 +1,5 @@
 ﻿using NAudio.Wave;
+using SpeakingChatbot.UserControls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace SpeakingChatbot
         private static Timer timer;
         private static Timer idleTimer;
 
-        public static void HandleVoice(Form1 mainForm, string message, string audioFile, string firstWord, string words)
+        public static void HandleVoice(ChatbotUC mainForm, string message, string audioFile, string firstWord, string words)
         {
             Console.WriteLine(message);
 
@@ -30,11 +31,10 @@ namespace SpeakingChatbot
             }
             else
             {
-                CycleIdleImages(mainForm);
             }
         }
 
-        private static void StartCyclingImages(Form1 mainForm)
+        private static void StartCyclingImages(ChatbotUC mainForm)
         {
             timer = new Timer();
             timer.Interval = 100;
@@ -48,7 +48,7 @@ namespace SpeakingChatbot
             timer.Start();
         }
 
-        private static void PlayAudio(string audioFile, Form1 mainForm)
+        private static void PlayAudio(string audioFile, ChatbotUC mainForm)
         {
             try
             {
@@ -62,7 +62,8 @@ namespace SpeakingChatbot
                         waveOut.PlaybackStopped += (s, e) =>
                         {
                             timer.Stop();
-                            CycleIdleImages(mainForm); 
+                            Image idleImage = Image.FromFile("..\\..\\..\\assets\\Idle1.png");
+                            mainForm.SetPictureBoxImage(idleImage);
                         };
 
                         while (waveOut.PlaybackState == PlaybackState.Playing)
@@ -78,7 +79,7 @@ namespace SpeakingChatbot
             }
         }
 
-        private static void CycleIdleImages(Form1 mainForm)
+/*        private static void CycleIdleImages(ChatbotUC mainForm)
         {
             string[] idleImagePaths = new string[]
             {
@@ -99,7 +100,7 @@ namespace SpeakingChatbot
             };
             idleTimer.Start();
         }
-
+*/
         private static void StopIdleCycle()
         {
             if (idleTimer != null)

@@ -53,5 +53,18 @@ namespace SpeakingChatbot.UserControls {
                 errorMsg.Visible = true;
             }
         }
+
+        private void AdjustFontSize() {
+            float newSize = this.Width * 0.018f;
+            if (newSize < 1) {
+                newSize = 1;
+            }
+            usernameTextBox.Font = new Font(usernameTextBox.Font.FontFamily, newSize);
+            passwordTextBox.Font = new Font(passwordTextBox.Font.FontFamily, newSize);
+        }
+
+        private void LoginUC_Click(object sender, EventArgs e) {
+            AdjustFontSize();
+        }
     }
 }

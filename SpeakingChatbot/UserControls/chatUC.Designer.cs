@@ -11,6 +11,10 @@ namespace SpeakingChatbot.UserControls {
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        public void SetPictureBoxImage(Image image) {
+            pictureBox1.Image = image;
+        }
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
@@ -30,6 +34,7 @@ namespace SpeakingChatbot.UserControls {
             avatarTbl = new TableLayoutPanel();
             avatarPanel = new Panel();
             usersPanel = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
             onlineTblPanel = new TableLayoutPanel();
             botBtn = new PictureBox();
             usersBtn = new PictureBox();
@@ -39,7 +44,7 @@ namespace SpeakingChatbot.UserControls {
             chatBoxTbl = new TableLayoutPanel();
             chatBoxBottomTbl = new TableLayoutPanel();
             sendBtn = new Button();
-            msgBox = new TextBox();
+            msgBox = new RichTextBox();
             topTbl = new TableLayoutPanel();
             userNameLbl = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -51,6 +56,8 @@ namespace SpeakingChatbot.UserControls {
             leftChatTbl.SuspendLayout();
             avatarTbl.SuspendLayout();
             avatarPanel.SuspendLayout();
+            usersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             onlineTblPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)botBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usersBtn).BeginInit();
@@ -136,11 +143,22 @@ namespace SpeakingChatbot.UserControls {
             // 
             usersPanel.AutoScroll = true;
             usersPanel.BackColor = Color.Transparent;
+            usersPanel.Controls.Add(pictureBox1);
             usersPanel.Dock = DockStyle.Fill;
             usersPanel.Location = new Point(0, 0);
             usersPanel.Name = "usersPanel";
             usersPanel.Size = new Size(294, 330);
             usersPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Idle1;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(288, 287);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // onlineTblPanel
             // 
@@ -167,7 +185,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             botBtn.BackgroundImageLayout = ImageLayout.None;
             botBtn.Dock = DockStyle.Fill;
-            botBtn.Image = Properties.Resources.dahlia;
+            botBtn.Image = Properties.Resources.dahlia__1_;
             botBtn.Location = new Point(17, 3);
             botBtn.Name = "botBtn";
             botBtn.Size = new Size(117, 30);
@@ -288,12 +306,11 @@ namespace SpeakingChatbot.UserControls {
             // msgBox
             // 
             msgBox.Dock = DockStyle.Fill;
-            msgBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            msgBox.Location = new Point(5, 5);
-            msgBox.Margin = new Padding(5);
+            msgBox.Location = new Point(3, 3);
             msgBox.Name = "msgBox";
-            msgBox.Size = new Size(351, 31);
+            msgBox.Size = new Size(355, 32);
             msgBox.TabIndex = 1;
+            msgBox.Text = "";
             // 
             // topTbl
             // 
@@ -321,9 +338,9 @@ namespace SpeakingChatbot.UserControls {
             userNameLbl.ForeColor = Color.White;
             userNameLbl.Location = new Point(26, 0);
             userNameLbl.Name = "userNameLbl";
-            userNameLbl.Size = new Size(133, 41);
+            userNameLbl.Size = new Size(79, 41);
             userNameLbl.TabIndex = 0;
-            userNameLbl.Text = "USERNAME";
+            userNameLbl.Text = "Dahlia";
             userNameLbl.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
@@ -407,11 +424,14 @@ namespace SpeakingChatbot.UserControls {
             Name = "ChatUC";
             Size = new Size(833, 464);
             Load += ChatUC_Load;
+            Resize += ChatUC_Resize;
             chatTbl.ResumeLayout(false);
             leftChatTbl.ResumeLayout(false);
             avatarTbl.ResumeLayout(false);
             avatarTbl.PerformLayout();
             avatarPanel.ResumeLayout(false);
+            usersPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             onlineTblPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)botBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)usersBtn).EndInit();
@@ -440,7 +460,6 @@ namespace SpeakingChatbot.UserControls {
         private TableLayoutPanel chatBoxTbl;
         private TableLayoutPanel chatBoxBottomTbl;
         private Button sendBtn;
-        private TextBox msgBox;
         private TableLayoutPanel chatLblTbl;
         private PictureBox chatLbl;
         private PictureBox botBtn;
@@ -453,5 +472,7 @@ namespace SpeakingChatbot.UserControls {
         private TableLayoutPanel chatBoxMsgTbl;
         private Panel chatPanel;
         private FlowLayoutPanel usersPanel;
+        private RichTextBox msgBox;
+        private PictureBox pictureBox1;
     }
 }

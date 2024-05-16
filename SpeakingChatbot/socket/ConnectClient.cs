@@ -27,14 +27,9 @@ namespace SpeakingChatbot.socket
             client = new TcpClient();
         }
 
-
-        // sa login to icacall
         public void ConnectToServer(string username)
         {
-
-            // store sa env
-            // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
-            string address = "192.168.1.13";
+            string address = "192.168.18.77";
             int port = 8080;
 
             if (!client.Connected) {

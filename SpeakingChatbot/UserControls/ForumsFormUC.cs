@@ -37,17 +37,42 @@ namespace SpeakingChatbot.UserControls {
             BackBtnClick?.Invoke(this, username);
         }
 
+        private void AdjustFontSize() {
+            float newSize = this.Width * 0.01f;
+            if (newSize < 1) {
+                newSize = 1;
+            }
+            titleTextBox.Font = new Font(titleTextBox.Font.FontFamily, newSize);
+            descriptionTextBox.Font = new Font(descriptionTextBox.Font.FontFamily, newSize);
+        }
+
         private void submitBtn_Click(object sender, EventArgs e) {
             var title = titleTextBox.Text.Trim();
             var description = descriptionTextBox.Text.Trim();
 
             bool sdg = false;
+            int sdgNum = 0;
+
 
             foreach (Control cBox in sdgCheckTbl.Controls) {
                 if (cBox is CheckBox) {
                     if (((CheckBox)cBox).Checked == true) {
+                        sdgNum++;
                         sdg = true;
-                        break;
+                    }
+                }
+            }
+
+            int sdgLbl;
+            int[] sdgs = new int[sdgNum];
+            int sdgCnt = 0;
+
+            foreach (Control cBox in sdgCheckTbl.Controls) {
+                if (cBox is CheckBox) {
+                    if (((CheckBox)cBox).Checked == true) {
+                        sdgLbl = Convert.ToInt32(((CheckBox)cBox).Name.Remove(0, 3));
+                        sdgs[sdgCnt] = sdgLbl;
+                        sdgCnt++;
                     }
                 }
             }
@@ -79,10 +104,10 @@ namespace SpeakingChatbot.UserControls {
                     File.Copy(filePath, newFilePath);
 
 
-                    crud.createForm(username, title, cat, description, newFilePath);
+                    crud.createForm(username, title, cat, description, sdgs, newFilePath);
 
                 } else {
-                    crud.createForm(username, title, cat, description);
+                    crud.createForm(username, title, cat, description, sdgs);
                 }
                 clearForm();
             }
@@ -136,10 +161,6 @@ namespace SpeakingChatbot.UserControls {
             }
 
         }
-
-
-
-
 
         private void cat1_Click(object sender, EventArgs e) {
             cat = "guide";
@@ -284,6 +305,40 @@ namespace SpeakingChatbot.UserControls {
             } else {
                 sdg17.Checked = true;
             }
+        }
+
+        private void ForumsFormUC_Resize(object sender, EventArgs e) {
+            AdjustFontSize();
+        }
+
+        private void cat1Lbl_Click(object sender, EventArgs e) {
+            cat = "guide";
+            cat1.Checked = true;
+        }
+
+        private void cat2Lbl_Click(object sender, EventArgs e) {
+            cat = "event";
+            cat2.Checked = true;
+        }
+
+        private void cat3Lbl_Click(object sender, EventArgs e) {
+            cat = "question";
+            cat3.Checked = true;
+        }
+
+        private void cat4Lbl_Click(object sender, EventArgs e) {
+            cat = "news";
+            cat4.Checked = true;
+        }
+
+        private void cat5Lbl_Click(object sender, EventArgs e) {
+            cat = "research paper";
+            cat5.Checked = true;
+        }
+
+        private void cat6Lbl_Click(object sender, EventArgs e) {
+            cat = "others";
+            cat6.Checked = true;
         }
     }
 }

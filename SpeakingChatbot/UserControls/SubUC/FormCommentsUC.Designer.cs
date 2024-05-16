@@ -62,10 +62,11 @@
             // 
             username.AutoSize = true;
             username.Dock = DockStyle.Fill;
+            username.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             username.ForeColor = Color.White;
             username.Location = new Point(0, 0);
             username.Name = "username";
-            username.Size = new Size(73, 20);
+            username.Size = new Size(114, 31);
             username.TabIndex = 1;
             username.Text = "username";
             // 
@@ -83,10 +84,10 @@
             // comment
             // 
             comment.AutoSize = true;
-            comment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comment.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             comment.Location = new Point(3, 30);
             comment.Name = "comment";
-            comment.Size = new Size(641, 84);
+            comment.Size = new Size(662, 120);
             comment.TabIndex = 1;
             comment.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis a condimentum vitae sapien pellentesque habitant morbi. ";
             // 

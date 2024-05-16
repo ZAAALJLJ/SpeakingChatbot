@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             SuspendLayout();
             // 
-            // Dahlia
+            // DahliaUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -34,7 +34,7 @@
             BackgroundImage = Properties.Resources.Idle1;
             BackgroundImageLayout = ImageLayout.Stretch;
             DoubleBuffered = true;
-            Name = "Dahlia";
+            Name = "DahliaUC";
             Size = new Size(469, 374);
             ResumeLayout(false);
         }
