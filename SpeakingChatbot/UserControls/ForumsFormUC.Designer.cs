@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -713,6 +720,7 @@
             // descriptionTextBox
             // 
             descriptionTextBox.BackColor = Color.Black;
+            descriptionTextBox.Cursor = Cursors.IBeam;
             descriptionTextBox.Dock = DockStyle.Fill;
             descriptionTextBox.ForeColor = Color.White;
             descriptionTextBox.Location = new Point(3, 179);
@@ -725,6 +733,7 @@
             // 
             titleTextBox.BackColor = Color.Black;
             titleTextBox.BorderStyle = BorderStyle.None;
+            titleTextBox.Cursor = Cursors.IBeam;
             titleTextBox.Dock = DockStyle.Fill;
             titleTextBox.ForeColor = Color.White;
             titleTextBox.Location = new Point(3, 73);
@@ -773,6 +782,7 @@
             // 
             // addFileBtn
             // 
+            addFileBtn.Cursor = Cursors.Hand;
             addFileBtn.Dock = DockStyle.Fill;
             addFileBtn.Image = Properties.Resources.addfile;
             addFileBtn.Location = new Point(10, 7);
@@ -786,6 +796,7 @@
             // 
             // submitBtn
             // 
+            submitBtn.Cursor = Cursors.Hand;
             submitBtn.Dock = DockStyle.Fill;
             submitBtn.Image = Properties.Resources.submit_button;
             submitBtn.Location = new Point(10, 100);
@@ -800,10 +811,11 @@
             // categoriesTbl
             // 
             categoriesTbl.BackColor = Color.FromArgb(200, 0, 0, 0);
-            categoriesTbl.ColumnCount = 3;
-            categoriesTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            categoriesTbl.ColumnCount = 4;
+            categoriesTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             categoriesTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             categoriesTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            categoriesTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             categoriesTbl.Controls.Add(cat1, 1, 0);
             categoriesTbl.Controls.Add(cat2, 1, 1);
             categoriesTbl.Controls.Add(cat3, 1, 2);
@@ -820,12 +832,12 @@
             categoriesTbl.Location = new Point(3, 3);
             categoriesTbl.Name = "categoriesTbl";
             categoriesTbl.RowCount = 6;
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666718F));
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666737F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            categoriesTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             categoriesTbl.Size = new Size(255, 182);
             categoriesTbl.TabIndex = 1;
             // 
@@ -834,7 +846,7 @@
             cat1.AutoSize = true;
             cat1.CheckAlign = ContentAlignment.MiddleCenter;
             cat1.Dock = DockStyle.Fill;
-            cat1.Location = new Point(54, 3);
+            cat1.Location = new Point(28, 3);
             cat1.Name = "cat1";
             cat1.Size = new Size(45, 24);
             cat1.TabIndex = 0;
@@ -847,7 +859,7 @@
             cat2.AutoSize = true;
             cat2.CheckAlign = ContentAlignment.MiddleCenter;
             cat2.Dock = DockStyle.Fill;
-            cat2.Location = new Point(54, 33);
+            cat2.Location = new Point(28, 33);
             cat2.Name = "cat2";
             cat2.Size = new Size(45, 24);
             cat2.TabIndex = 1;
@@ -860,7 +872,7 @@
             cat3.AutoSize = true;
             cat3.CheckAlign = ContentAlignment.MiddleCenter;
             cat3.Dock = DockStyle.Fill;
-            cat3.Location = new Point(54, 63);
+            cat3.Location = new Point(28, 63);
             cat3.Name = "cat3";
             cat3.Size = new Size(45, 24);
             cat3.TabIndex = 2;
@@ -873,7 +885,7 @@
             cat4.AutoSize = true;
             cat4.CheckAlign = ContentAlignment.MiddleCenter;
             cat4.Dock = DockStyle.Fill;
-            cat4.Location = new Point(54, 93);
+            cat4.Location = new Point(28, 93);
             cat4.Name = "cat4";
             cat4.Size = new Size(45, 24);
             cat4.TabIndex = 3;
@@ -886,7 +898,7 @@
             cat5.AutoSize = true;
             cat5.CheckAlign = ContentAlignment.MiddleCenter;
             cat5.Dock = DockStyle.Fill;
-            cat5.Location = new Point(54, 123);
+            cat5.Location = new Point(28, 123);
             cat5.Name = "cat5";
             cat5.Size = new Size(45, 24);
             cat5.TabIndex = 4;
@@ -899,7 +911,7 @@
             cat6.AutoSize = true;
             cat6.CheckAlign = ContentAlignment.MiddleCenter;
             cat6.Dock = DockStyle.Fill;
-            cat6.Location = new Point(54, 153);
+            cat6.Location = new Point(28, 153);
             cat6.Name = "cat6";
             cat6.Size = new Size(45, 26);
             cat6.TabIndex = 5;
@@ -911,11 +923,11 @@
             // cat1Lbl
             // 
             cat1Lbl.BackColor = Color.Transparent;
-            cat1Lbl.Dock = DockStyle.Left;
+            cat1Lbl.Dock = DockStyle.Fill;
             cat1Lbl.Image = Properties.Resources.guide;
-            cat1Lbl.Location = new Point(105, 3);
+            cat1Lbl.Location = new Point(79, 3);
             cat1Lbl.Name = "cat1Lbl";
-            cat1Lbl.Size = new Size(125, 24);
+            cat1Lbl.Size = new Size(147, 24);
             cat1Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat1Lbl.TabIndex = 12;
             cat1Lbl.TabStop = false;
@@ -923,11 +935,11 @@
             // 
             // cat2Lbl
             // 
-            cat2Lbl.Dock = DockStyle.Left;
+            cat2Lbl.Dock = DockStyle.Fill;
             cat2Lbl.Image = Properties.Resources._event;
-            cat2Lbl.Location = new Point(105, 33);
+            cat2Lbl.Location = new Point(79, 33);
             cat2Lbl.Name = "cat2Lbl";
-            cat2Lbl.Size = new Size(125, 24);
+            cat2Lbl.Size = new Size(147, 24);
             cat2Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat2Lbl.TabIndex = 13;
             cat2Lbl.TabStop = false;
@@ -935,11 +947,11 @@
             // 
             // cat3Lbl
             // 
-            cat3Lbl.Dock = DockStyle.Left;
+            cat3Lbl.Dock = DockStyle.Fill;
             cat3Lbl.Image = Properties.Resources.question;
-            cat3Lbl.Location = new Point(105, 63);
+            cat3Lbl.Location = new Point(79, 63);
             cat3Lbl.Name = "cat3Lbl";
-            cat3Lbl.Size = new Size(125, 24);
+            cat3Lbl.Size = new Size(147, 24);
             cat3Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat3Lbl.TabIndex = 14;
             cat3Lbl.TabStop = false;
@@ -947,11 +959,11 @@
             // 
             // cat4Lbl
             // 
-            cat4Lbl.Dock = DockStyle.Left;
+            cat4Lbl.Dock = DockStyle.Fill;
             cat4Lbl.Image = Properties.Resources.news;
-            cat4Lbl.Location = new Point(105, 93);
+            cat4Lbl.Location = new Point(79, 93);
             cat4Lbl.Name = "cat4Lbl";
-            cat4Lbl.Size = new Size(125, 24);
+            cat4Lbl.Size = new Size(147, 24);
             cat4Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat4Lbl.TabIndex = 15;
             cat4Lbl.TabStop = false;
@@ -959,11 +971,11 @@
             // 
             // cat6Lbl
             // 
-            cat6Lbl.Dock = DockStyle.Left;
+            cat6Lbl.Dock = DockStyle.Fill;
             cat6Lbl.Image = Properties.Resources.others;
-            cat6Lbl.Location = new Point(105, 153);
+            cat6Lbl.Location = new Point(79, 153);
             cat6Lbl.Name = "cat6Lbl";
-            cat6Lbl.Size = new Size(125, 26);
+            cat6Lbl.Size = new Size(147, 26);
             cat6Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat6Lbl.TabIndex = 17;
             cat6Lbl.TabStop = false;
@@ -971,12 +983,12 @@
             // 
             // cat5Lbl
             // 
-            cat5Lbl.Dock = DockStyle.Left;
+            cat5Lbl.Dock = DockStyle.Fill;
             cat5Lbl.Image = Properties.Resources.research;
-            cat5Lbl.Location = new Point(102, 120);
+            cat5Lbl.Location = new Point(76, 120);
             cat5Lbl.Margin = new Padding(0);
             cat5Lbl.Name = "cat5Lbl";
-            cat5Lbl.Size = new Size(125, 30);
+            cat5Lbl.Size = new Size(153, 30);
             cat5Lbl.SizeMode = PictureBoxSizeMode.StretchImage;
             cat5Lbl.TabIndex = 18;
             cat5Lbl.TabStop = false;
@@ -1014,6 +1026,7 @@
             // 
             // backBtn
             // 
+            backBtn.Cursor = Cursors.Hand;
             backBtn.Dock = DockStyle.Fill;
             backBtn.Image = Properties.Resources.backbutton;
             backBtn.Location = new Point(524, 3);

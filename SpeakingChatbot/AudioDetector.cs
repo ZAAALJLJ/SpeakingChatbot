@@ -24,7 +24,7 @@ public class AudioDetector : IDisposable {
 
     private void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e) {
         OnSoundDetected("Oh no!");
-        Dispose();
+        // Dispose();
     }
 
     protected virtual void OnSoundDetected(string message) {

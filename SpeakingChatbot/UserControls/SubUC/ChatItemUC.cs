@@ -20,15 +20,13 @@ namespace SpeakingChatbot.UserControls.SubUC {
             ChatModel = chatModel;
 
             chatTbl.Controls.Clear();
-
+            
             // receiver
             if (ChatModel.Inbound) {
                 chatTbl.Controls.Add(chatMsg, 1, 0);
                 chatMsg.BackColor = SystemColors.AppWorkspace;
                 chatMsg.Dock = DockStyle.Left;
 
-                // picture
-                // profilePic.Image = Properties.Resources.forumicon;
                 chatTbl.Controls.Add(profilePic, 0, 0);
             }
             // sender
@@ -56,8 +54,6 @@ namespace SpeakingChatbot.UserControls.SubUC {
             SuspendLayout();
 
             var textmodel = ChatModel as TextChatModel;
-            //Ah, this is hell. Alright, so the implementation for this is similar to the image one, except the width can't be automatically calculated. Instead, it
-            //has to be calculated through the size and length of the text. See TextChange().
             string body = textmodel.Body;
             TextChange(chatMsg.Text);
 
@@ -69,16 +65,10 @@ namespace SpeakingChatbot.UserControls.SubUC {
                 int lines = 1;
                 double stringwidth = gfx.MeasureString(body, chatMsg.Font).Width;
 
-                //The system is as follows. The box width can only go to MaxWidth, if it goes to MaxWidth, then wordwrap will bring the text down to a new line.
-                //In order to fit it, we'll need to adjust the height by a certain amount of units.
-
-                // chatTbl.Controls.Add(chatMsg, 2, 0);
-
                 int width = chatTbl.GetColumnWidths()[2];
-                // int height = tableLayoutPanel1.GetRowHeights()[pos.Row];
+                int height = chatTbl.GetRowHeights()[0];
 
                 if (stringwidth < maxwidth + width - chatMsg.Width) {
-                    //This is great, we can set the width to be a small as the actual text.
                     width = (int)(stringwidth + width - chatMsg.Width + 5);
                 } else {
                     lines = 0;
@@ -101,8 +91,6 @@ namespace SpeakingChatbot.UserControls.SubUC {
                         lines++;
                     }
                 }
-
-                //Adjusts the height based on the number of lines.
                 this.Height = (lines * fontheight) + Height - chatMsg.Height;
             }
         }

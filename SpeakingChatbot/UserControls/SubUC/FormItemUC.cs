@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpeakingChatbot.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace SpeakingChatbot.UserControls.SubUC {
 
         public event EventHandler<int> formClicked;
 
+
+        Crud crud = new Crud();
         string postId;
         string userName;
         string postTitle;
@@ -28,17 +31,18 @@ namespace SpeakingChatbot.UserControls.SubUC {
             InitializeComponent();
 
             postId = postInfo[0];
-            userName = postInfo[1];
+            string userId = postInfo[1];
             postTitle = postInfo[2];
             postCategory = postInfo[3];
             votes = postInfo[4];
             postCreated = postInfo[5];
+
+            userName = crud.getUserById(Convert.ToInt32(userId));
         }
 
         private void FormItemUC_Load(object sender, EventArgs e) {
             Name = postId.ToString();
             usernameLbl.Text = userName;
-            // sdgLbl.Text = 
             titleLbl.Text = postTitle;
 
             string[] date = postCreated.Split(' ');
@@ -97,6 +101,11 @@ namespace SpeakingChatbot.UserControls.SubUC {
         private void contentPanel_Click(object sender, EventArgs e) {
             formClicked?.Invoke(this, Convert.ToInt32(postId));
             Debug.WriteLine("asdasd" + postId);
+        }
+
+        private void titleLbl_Resize(object sender, EventArgs e) {
+            int maxWidth = (int)(this.Width * 5);
+            titleLbl.MaximumSize = new Size(maxWidth, 0);
         }
     }
 }

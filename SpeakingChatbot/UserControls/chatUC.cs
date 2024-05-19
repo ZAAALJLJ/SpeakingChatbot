@@ -53,7 +53,6 @@ namespace SpeakingChatbot.UserControls {
 
         public void checkUsers() {
 
-            // will check pa
             Debug.WriteLine("here hehe");
 
             string[] onlineUsers = crud.getUsers(username, 1);
@@ -78,7 +77,6 @@ namespace SpeakingChatbot.UserControls {
         }
 
         public void userConnected(object? sender, string userConnected) {
-            // inform everyone lang na may new user
             Debug.WriteLine($"user connect: {userConnected}");
         }
 
@@ -100,14 +98,11 @@ namespace SpeakingChatbot.UserControls {
                     Read = true,
                     Time = DateTime.Now,
                     Sender = senderUser,
-                    // for now change it later to just msg
                     Body = senderUser + ": " + msg
                 };
             }
 
-            // chat 
             if (textModel != null) {
-                // addMsg(textModel);
                 var chatItem = new ChatItemUC(textModel) {
                     Name = "chatMsg" + chatPanel.Controls.Count,
                     Dock = DockStyle.Top
@@ -226,7 +221,7 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void AdjustFontSize() {
-            float newSize = this.Width * 0.008f;
+            float newSize = this.Width * 0.018f;
             if (newSize < 1) {
                 newSize = 1;
             }
@@ -279,6 +274,7 @@ namespace SpeakingChatbot.UserControls {
                 synth.Speak(builder);
             }
         }
+
     }
 
 }

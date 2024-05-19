@@ -12,12 +12,13 @@ using System.Windows.Forms;
 namespace SpeakingChatbot.UserControls {
     public partial class SignUpUC : UserControl {
         public event Action SignUpEnterClick;
+        public event Action BackBtnClick;
         public SignUpUC() {
             InitializeComponent();
         }
 
         private void AdjustFontSize() {
-            float newSize = this.Width * 0.015f;
+            float newSize = this.Width * 0.018f;
             if (newSize < 1) {
                 newSize = 1;
             }
@@ -35,9 +36,6 @@ namespace SpeakingChatbot.UserControls {
             var cPassword = cPasswordTextBox.Text;
             username.Trim();
 
-            // get user by uername function sa db
-            // if found send error, username is already taken
-
             if (!string.IsNullOrWhiteSpace(username) &&
               !string.IsNullOrWhiteSpace(password) &&
               !string.IsNullOrWhiteSpace(cPassword)) {
@@ -45,9 +43,6 @@ namespace SpeakingChatbot.UserControls {
                 Crud crud = new Crud();
 
                 if (true) {
-                    /*errorMsg.BackColor = Color.Red;
-                    errorMsg.Text = "Username is already taken.";
-                    errorMsg.Visible = true;*/
                 }
                 if (password != cPassword) {
                     errorMsg.BackColor = Color.Red;
@@ -57,15 +52,13 @@ namespace SpeakingChatbot.UserControls {
 
                 crud.createUser(username, password);
 
-                // kahulihan pag success na pag sign in
-                // add db
-               /* errorMsg.BackColor = Color.Lime;
-                errorMsg.Text = "Signed up successfully";
-                errorMsg.Visible = true;
-*/
-                // count 5 before proceed sa login page
+                usernameTextBox.Text = "";
+                passwordTextBox.Text = "";
+                cPasswordTextBox.Text = "";
 
-                SignUpEnterClick?.Invoke();
+                errorMsg.BackColor = Color.Lime;
+                errorMsg.Text = "Account Created.";
+                errorMsg.Visible = true;
 
             } else {
                 errorMsg.BackColor = Color.Red;
@@ -76,6 +69,10 @@ namespace SpeakingChatbot.UserControls {
 
         private void SignUpUC_Resize(object sender, EventArgs e) {
             AdjustFontSize();
+        }
+
+        private void backBtn_Click(object sender, EventArgs e) {
+            BackBtnClick?.Invoke();
         }
     }
 }

@@ -30,7 +30,6 @@ namespace SpeakingChatbot.UserControls {
             InitializeComponent();
             username = userName;
             client.msgChatBotReceivedEvent += msgReceived;
-            // chatTbl.BackColor = Color.FromArgb(200, Color.Black);
         }
 
         public void msgReceived(object? sender, string[] infoArr) {
@@ -43,7 +42,6 @@ namespace SpeakingChatbot.UserControls {
             Debug.WriteLine(receivingUser);
             Debug.WriteLine(msg);
 
-
             TextChatModel textModel = null;
             if (!string.IsNullOrWhiteSpace(msg)) {
                 textModel = new TextChatModel() {
@@ -51,17 +49,15 @@ namespace SpeakingChatbot.UserControls {
                     Read = true,
                     Time = DateTime.Now,
                     Sender = senderUser,
-                    // for now change it later to just msg
                     Body = senderUser + ": " + msg
                 };
             }
 
-            // chat 
             if (textModel != null) {
-                // addMsg(textModel);
-                var chatItem = new ChatItemUC(textModel);
-                chatItem.Name = "chatItem" + chatItem.Controls.Count;
-                chatItem.Dock = DockStyle.Top;
+                var chatItem = new ChatItemUC(textModel) {
+                    Name = "chatMsg" + chatPanel.Controls.Count,
+                    Dock = DockStyle.Bottom
+                };
 
                 chatPanel.Invoke((MethodInvoker)(() => {
                     chatPanel.Controls.Add(chatItem);
@@ -69,7 +65,6 @@ namespace SpeakingChatbot.UserControls {
                 }));
 
                 chatItem.Invoke((MethodInvoker)(() => chatItem.BringToFront()));
-
                 chatItem.Invoke((MethodInvoker)(() => chatItem.ResizeBubbles((int)(chatPanel.Width * 0.4))));
             }
 
@@ -98,7 +93,6 @@ namespace SpeakingChatbot.UserControls {
             File.Delete(wavFilePath);
             File.Delete(mp3FilePath);
             audioDetector.Dispose();
-
         }
 
         private void backBtn_Click(object sender, EventArgs e) {
@@ -106,14 +100,15 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void addMsg(IChatModel textModel) {
-            // add sender name and time // add panel
+            var chatItem = new ChatItemUC(textModel) {
+                Name = "chatMsg" + chatPanel.Controls.Count,
+                Dock = DockStyle.Top,
+                Margin = new Padding(10),
+            };
 
-            var chatItem = new ChatItemUC(textModel);
-            chatItem.Name = "chatItem" + chatItem.Controls.Count;
-            chatItem.Dock = DockStyle.Top;
             chatPanel.Controls.Add(chatItem);
-            chatItem.BringToFront();
 
+            chatItem.BringToFront();
 
             chatItem.ResizeBubbles((int)(chatPanel.Width * 0.4));
 
@@ -131,13 +126,12 @@ namespace SpeakingChatbot.UserControls {
                     Inbound = false,
                     Read = true,
                     Time = DateTime.Now,
-                    Sender = "currentUser", // galing db to
+                    Sender = "currentUser",
                     Body = msg
                 };
             }
 
             try {
-                // chat 
                 if (textModel != null) {
                     addMsg(textModel);
                     msgBox.Text = string.Empty;
@@ -149,7 +143,7 @@ namespace SpeakingChatbot.UserControls {
                     Inbound = false,
                     Read = true,
                     Time = DateTime.Now,
-                    Sender = "currentUser", // galing db to
+                    Sender = "currentUser",
                     Body = "Failed to send message. See error:\r\n" + err.Message
                 };
                 addMsg(textModel);
@@ -157,12 +151,11 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void AdjustFontSize() {
-            float newSize = this.Width * 0.008f;
+            float newSize = this.Width * 0.015f;
             if (newSize < 1) {
                 newSize = 1;
             }
             msgBox.Font = new Font(msgBox.Font.FontFamily, newSize);
-
         }
 
         private void ChatbotUC_Resize(object sender, EventArgs e) {
@@ -178,5 +171,16 @@ namespace SpeakingChatbot.UserControls {
                 synth.Speak(builder);
             }
         }
+
+        private void ChatbotUC_Paint(object sender, PaintEventArgs e) {
+            this.DoubleBuffered = true;
+            this.SetStyle(
+              ControlStyles.AllPaintingInWmPaint |
+              ControlStyles.UserPaint |
+              ControlStyles.DoubleBuffer,
+            true
+            );
+        }
+
     }
 }

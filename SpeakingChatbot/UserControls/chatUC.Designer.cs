@@ -22,6 +22,14 @@ namespace SpeakingChatbot.UserControls {
             base.Dispose(disposing);
         }
 
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
         #region Component Designer generated code
 
         /// <summary> 
@@ -184,6 +192,7 @@ namespace SpeakingChatbot.UserControls {
             // botBtn
             // 
             botBtn.BackgroundImageLayout = ImageLayout.None;
+            botBtn.Cursor = Cursors.Hand;
             botBtn.Dock = DockStyle.Fill;
             botBtn.Image = Properties.Resources.dahlia__1_;
             botBtn.Location = new Point(17, 3);
@@ -196,6 +205,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // usersBtn
             // 
+            usersBtn.Cursor = Cursors.Hand;
             usersBtn.Dock = DockStyle.Fill;
             usersBtn.Image = Properties.Resources.users;
             usersBtn.Location = new Point(157, 3);
@@ -292,7 +302,9 @@ namespace SpeakingChatbot.UserControls {
             // 
             sendBtn.AutoSize = true;
             sendBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            sendBtn.Cursor = Cursors.Hand;
             sendBtn.Dock = DockStyle.Fill;
+            sendBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
             sendBtn.FlatStyle = FlatStyle.Flat;
             sendBtn.ForeColor = Color.White;
             sendBtn.Location = new Point(364, 3);
@@ -305,6 +317,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // msgBox
             // 
+            msgBox.Cursor = Cursors.IBeam;
             msgBox.Dock = DockStyle.Fill;
             msgBox.Location = new Point(3, 3);
             msgBox.Name = "msgBox";
@@ -376,6 +389,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // chatPanel
             // 
+            chatPanel.AutoScroll = true;
             chatPanel.BackColor = Color.Transparent;
             chatPanel.Dock = DockStyle.Fill;
             chatPanel.Location = new Point(8, 3);
@@ -401,6 +415,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // backBtn
             // 
+            backBtn.Cursor = Cursors.Hand;
             backBtn.Dock = DockStyle.Fill;
             backBtn.Image = Properties.Resources.backbutton;
             backBtn.Location = new Point(324, 0);

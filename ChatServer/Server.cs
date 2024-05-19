@@ -9,16 +9,12 @@ namespace ChatServer {
 
     internal class Server {
 
-        // CHANGE SA IPADDRESS NG MAIN LAPTOP NA MAGHOHOST NG SERVERRRR
-        static string address = "192.168.18.77";
-        // static string address = "127.0.0.1";
+        static string address = "127.0.0.1";
         static int port = 8080;
 
         static TcpListener listener;
         static List<Client> clients;
 
-        // gc maybe?
-        // static List channels;
 
         static void Main(string[] args) {
 
@@ -30,12 +26,9 @@ namespace ChatServer {
             Console.WriteLine("Server has started");
 
             while (true) {
-                // accept the connection from the client
                 var client = new Client(listener.AcceptTcpClient());
                 clients.Add(item: client);
 
-                // broadcast the connection to everyone// new user arrive chuchu
-                // online/offline -- connected/disconnected sa server
                 BroadcastConnection();
             }
 

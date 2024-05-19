@@ -18,7 +18,6 @@ namespace SpeakingChatbot {
 
     public partial class Chavatar : System.Windows.Forms.Form {
 
-        // baguhin to -- copy loginUC
         WelcomeUC welcomeUC;
         LoginSignUpUC loginSignUpUC;
         LoginUC loginUC;
@@ -34,13 +33,10 @@ namespace SpeakingChatbot {
 
         string currentUser;
 
-
-
         public Chavatar() {
             InitializeComponent();
             WelcomeUC();
         }
-
 
         void setClient(object? sender, Object Client) {
             client = (socketControl)Client;
@@ -70,6 +66,8 @@ namespace SpeakingChatbot {
             loginUC = new LoginUC();
             loginUC.LoginEnterClick += MainMenuUC;
             loginUC.LoginSetClient += setClient;
+            loginUC.BackBtnClick += LoginSignUpUC;
+
             MainPanel.Controls.Clear();
             loginUC.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(loginUC);
@@ -78,6 +76,7 @@ namespace SpeakingChatbot {
         protected void SignUpUC() {
             signUpUC = new SignUpUC();
             signUpUC.SignUpEnterClick += LoginUC;
+            signUpUC.BackBtnClick += LoginSignUpUC;
 
             MainPanel.Controls.Clear();
             signUpUC.Dock = DockStyle.Fill;

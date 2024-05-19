@@ -59,7 +59,7 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Account created!");
+                // MessageBox.Show("Account created!");
             } catch (Exception ex) {
                 MessageBox.Show("Creating account not created: " + ex.Message);
             }
@@ -84,13 +84,13 @@ namespace SpeakingChatbot.db {
                     }
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("get user by name Error: " + ex.Message);
             }
 
             return userId;
         }
 
-        private string getUserById(int userId) {
+        public string getUserById(int userId) {
             string username = "";
             string query = "SELECT `userName` FROM `users` WHERE `userId` = @usId LIMIT 1";
 
@@ -107,7 +107,7 @@ namespace SpeakingChatbot.db {
                     }
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("get user by id Error: " + ex.Message);
             }
 
             return username;
@@ -140,7 +140,7 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Post created!");
+                // MessageBox.Show("Post created!");
             } catch (Exception ex) {
                 MessageBox.Show("Post not created: " + ex.Message);
             }
@@ -167,7 +167,7 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Sdg added!");
+                // MessageBox.Show("Sdg added!");
             } catch (Exception ex) {
                 MessageBox.Show("sdg not added: " + ex.Message);
             }
@@ -192,7 +192,6 @@ namespace SpeakingChatbot.db {
 
         public bool checkCredentials(string username, string password) {
             bool isFound = false;
-            string IPAddress;
 
             string hashedPass = hashPassword(password);
 
@@ -212,45 +211,14 @@ namespace SpeakingChatbot.db {
                     }
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("check credentials Error: " + ex.Message);
             }
 
-            if(isFound) {
-                currentIpAddress = GetLocalIPAddress();
-                addLocalIPAddress(currentIpAddress, username);
-            }
 
             db.closeConnection();
 
             return isFound;
         }
-
-        private string GetLocalIPAddress() {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList) {
-                if (ip.AddressFamily == AddressFamily.InterNetwork) {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("No network adapters with an IPv4 address in the system!");
-        }
-
-        private void addLocalIPAddress(string IPAddress, string username) {
-            string query = "UPDATE `users` SET `IPAddress` = @ipadd, `isOnline` = true WHERE `userName` = @usn LIMIT 1";
-            // string query = "INSERT INTO `users`(`IPAdress`) VALUES (@ipadd)";
-            MySqlCommand command = new MySqlCommand(query, db.getConnection());
-
-            command.Parameters.Add("@ipadd", MySqlDbType.VarChar).Value = IPAddress;
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
-
-            try {
-                command.ExecuteNonQuery();
-                MessageBox.Show("IP Address Added!");
-            } catch (Exception ex) {
-                MessageBox.Show("IP Address not Added: " + ex.Message);
-            }
-        }
-
 
         public string[] getUsers(string username, int isOnline) {
             string[] users;
@@ -271,7 +239,7 @@ namespace SpeakingChatbot.db {
                     }
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("get users Error: " + ex.Message);
             }
 
             query = "SELECT `userName` FROM `users` WHERE isOnline = @isOn AND `userName` != @curUser";
@@ -298,7 +266,7 @@ namespace SpeakingChatbot.db {
                     }
                 }
             } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
+                // MessageBox.Show("get users 1 Error: " + ex.Message);
             }
 
             db.closeConnection();
@@ -321,7 +289,7 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Comment Posted!");
+                // MessageBox.Show("Comment Posted!");
             } catch (Exception ex) {
                 MessageBox.Show("Error posting comment: " + ex.Message);
             }
@@ -375,7 +343,7 @@ namespace SpeakingChatbot.db {
 
             try {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Comment Posted!");
+                // MessageBox.Show("Comment Posted!");
             } catch (Exception ex) {
                 MessageBox.Show("Error addVotes: " + ex.Message);
             }

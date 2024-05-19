@@ -18,7 +18,7 @@ namespace SpeakingChatbot.UserControls {
             InitializeComponent();
         }
 
-        private void welcomeTblPanel_Click(object sender, EventArgs e) {
+        private void continueTbl_Click(object sender, EventArgs e) {
             WelcomeClick?.Invoke();
         }
     }

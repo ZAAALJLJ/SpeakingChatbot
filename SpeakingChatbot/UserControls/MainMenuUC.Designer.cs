@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -137,6 +144,7 @@
             // 
             // forumIcon
             // 
+            forumIcon.Cursor = Cursors.Hand;
             forumIcon.Dock = DockStyle.Fill;
             forumIcon.ErrorImage = Properties.Resources.forumicon;
             forumIcon.Image = Properties.Resources.forumicon;
@@ -152,6 +160,7 @@
             // 
             // forumBtn
             // 
+            forumBtn.Cursor = Cursors.Hand;
             forumBtn.Dock = DockStyle.Fill;
             forumBtn.ErrorImage = Properties.Resources.forumsbutton;
             forumBtn.Image = Properties.Resources.forumsbutton;
@@ -184,6 +193,7 @@
             // 
             // chatIcon
             // 
+            chatIcon.Cursor = Cursors.Hand;
             chatIcon.Dock = DockStyle.Fill;
             chatIcon.ErrorImage = Properties.Resources.onlinechaticon;
             chatIcon.Image = Properties.Resources.onlinechaticon;
@@ -199,6 +209,7 @@
             // 
             // chatBtn
             // 
+            chatBtn.Cursor = Cursors.Hand;
             chatBtn.Dock = DockStyle.Fill;
             chatBtn.ErrorImage = Properties.Resources.onlinechatbutton;
             chatBtn.Image = Properties.Resources.onlinechatbutton;
@@ -230,6 +241,7 @@
             // 
             // chatbotIcon
             // 
+            chatbotIcon.Cursor = Cursors.Hand;
             chatbotIcon.Dock = DockStyle.Fill;
             chatbotIcon.ErrorImage = Properties.Resources.chatboticon;
             chatbotIcon.Image = Properties.Resources.chatboticon;
@@ -245,6 +257,7 @@
             // 
             // chatbotBtn
             // 
+            chatbotBtn.Cursor = Cursors.Hand;
             chatbotBtn.Dock = DockStyle.Fill;
             chatbotBtn.ErrorImage = Properties.Resources.chatbotbutton;
             chatbotBtn.Image = Properties.Resources.chatbotbutton;

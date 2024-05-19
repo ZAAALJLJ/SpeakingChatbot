@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -102,6 +109,7 @@
             // 
             // clearBtn
             // 
+            clearBtn.Cursor = Cursors.Hand;
             clearBtn.Dock = DockStyle.Fill;
             clearBtn.ErrorImage = Properties.Resources.clear_button;
             clearBtn.Image = Properties.Resources.clear_button;
@@ -115,6 +123,7 @@
             // 
             // applyBtn
             // 
+            applyBtn.Cursor = Cursors.Hand;
             applyBtn.Dock = DockStyle.Fill;
             applyBtn.ErrorImage = Properties.Resources.apply_button;
             applyBtn.Image = Properties.Resources.apply_button;
@@ -147,6 +156,7 @@
             // 
             // sdgBtn
             // 
+            sdgBtn.Cursor = Cursors.Hand;
             sdgBtn.Dock = DockStyle.Fill;
             sdgBtn.Image = Properties.Resources.sdg;
             sdgBtn.Location = new Point(3, 7);
@@ -159,6 +169,7 @@
             // 
             // categoryBtn
             // 
+            categoryBtn.Cursor = Cursors.Hand;
             categoryBtn.Dock = DockStyle.Fill;
             categoryBtn.Image = Properties.Resources.categories;
             categoryBtn.Location = new Point(112, 7);
@@ -257,6 +268,7 @@
             // 
             // backBtn
             // 
+            backBtn.Cursor = Cursors.Hand;
             backBtn.Dock = DockStyle.Fill;
             backBtn.Image = Properties.Resources.backbutton;
             backBtn.Location = new Point(523, 19);
@@ -297,6 +309,7 @@
             // uploadBtn
             // 
             uploadBtn.BackColor = Color.Transparent;
+            uploadBtn.Cursor = Cursors.Hand;
             uploadBtn.Dock = DockStyle.Fill;
             uploadBtn.Image = Properties.Resources.uploadbutton;
             uploadBtn.Location = new Point(520, 3);

@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -65,6 +72,7 @@
             // 
             chatMsg.AutoSize = true;
             chatMsg.BackColor = SystemColors.ActiveCaption;
+            chatMsg.Cursor = Cursors.IBeam;
             chatMsg.Location = new Point(454, 5);
             chatMsg.Margin = new Padding(0, 5, 0, 5);
             chatMsg.Name = "chatMsg";

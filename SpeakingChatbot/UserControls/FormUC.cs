@@ -20,8 +20,6 @@ namespace SpeakingChatbot.UserControls {
 
         public event EventHandler<string> BackBtnClick;
 
-        FormCommentsUC formComments;
-
         Crud crud = new Crud();
 
         string[] postInfo = new string[8];
@@ -44,59 +42,38 @@ namespace SpeakingChatbot.UserControls {
             }
         }
 
+
+
         private void submitBtn_Click(object sender, EventArgs e) {
-            // open the file
             Process.Start("explorer.exe", filePath);
-
-            // add comment using the commentUC
-
-            // disable submit btn if wala laman textbox
-
-            /*formComments = new FormCommentsUC(i) {
-                Name = "comment" + i++,
-                Dock = DockStyle.Top,
-            };
-
-            commentPanel.Controls.Add(formComments);*/
         }
 
 
         private void AdjustFontSize() {
-            float newSize = this.Width * 0.065f;
+            float newSize = this.Width * 0.05f;
             if (newSize < 1) {
                 newSize = 1;
             }
-            float newSize1 = this.Width * 0.04f;
+            float newSize1 = this.Width * 0.02f;
             if (newSize1 < 1) {
                 newSize1 = 1;
             }
             titleLbl.Font = new Font(titleLbl.Font.FontFamily, newSize);
             content.Font = new Font(content.Font.FontFamily, newSize1);
         }
-
-        // for now wala muna to
         private void FormUC_Load(object sender, EventArgs e) {
             AdjustFontSize();
-            // votes.Text = postInfo[7];
-
-
-
-            /*            SpeechRecognitionEngine speechRecognizer = new SpeechRecognitionEngine();
-                        speechRecognizer.SetInputToDefaultAudioDevice();
-                        Grammar grammar = new DictationGrammar();
-                        speechRecognizer.LoadGrammar(grammar);
-                        speechRecognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(speechRecognizer_SpeechRecognized);
-                        speechRecognizer.RecognizeAsync(RecognizeMode.Multiple);*/
         }
 
         private void backBtn_Click(object sender, EventArgs e) {
             BackBtnClick?.Invoke(this, string.Empty);
         }
 
-        /*        private void speechRecognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e) {
-                    content.Text = e.Result.Text + "\r\n";
-                    Debug.WriteLine(e.Result.Text);
-                }*/
+        private void FormUC_Resize(object sender, EventArgs e) {
+            int titleWidth = (int)(this.Width * 0.75);
+            Debug.WriteLine($"{this.Width} {titleWidth}");
+            titleLbl.MaximumSize = new Size(titleWidth, 0);
+        }
 
     }
 }

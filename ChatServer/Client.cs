@@ -53,7 +53,7 @@ namespace ChatServer {
                             if(senderUser == receivingUser) {
                                 msgToGemini = msg;
                             } else {
-                                // dito icall nalang si gemini bot
+                                // call bot
                                 msgToGemini = checkMsgInput(msg);
                             }
 
@@ -89,15 +89,11 @@ namespace ChatServer {
 
             if (msgFromUser[0] == "@dahlia") {
                 Console.WriteLine("calling waifuuu");
-
-                // if (calledWaifu[0] == "@waifu")
                 try {
-                    // question
                     Console.WriteLine(msgFromUser[1]);
 
                     msgToGemini = msgFromUser[1];
                 } catch (Exception ex) {
-                    // call waifu lang no msg
                     Console.WriteLine("No question");
 
                     string[] wakeWaifu = { "hi", "hello", "hey", "you there? " };

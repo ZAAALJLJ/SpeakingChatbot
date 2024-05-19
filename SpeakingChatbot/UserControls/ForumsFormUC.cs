@@ -114,8 +114,6 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void clearForm() {
-            // clear lahat
-
             int milliseconds = 1500;
             Thread.Sleep(milliseconds);
 

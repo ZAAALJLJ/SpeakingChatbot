@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -40,6 +47,7 @@
             // usernameLbl
             // 
             usernameLbl.AutoSize = true;
+            usernameLbl.Cursor = Cursors.IBeam;
             usernameLbl.Dock = DockStyle.Left;
             usernameLbl.ForeColor = SystemColors.Highlight;
             usernameLbl.Location = new Point(3, 0);
@@ -121,15 +129,18 @@
             // titleLbl
             // 
             titleLbl.AutoSize = true;
+            titleLbl.Cursor = Cursors.IBeam;
             titleLbl.Dock = DockStyle.Fill;
             titleLbl.ForeColor = Color.White;
             titleLbl.Location = new Point(0, 0);
+            titleLbl.MaximumSize = new Size(500, 0);
             titleLbl.Name = "titleLbl";
-            titleLbl.Size = new Size(44, 20);
+            titleLbl.Size = new Size(500, 40);
             titleLbl.TabIndex = 1;
-            titleLbl.Text = "TITLE";
+            titleLbl.Text = "TITLEeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
             titleLbl.TextAlign = ContentAlignment.MiddleLeft;
             titleLbl.Click += titleLbl_Click;
+            titleLbl.Resize += titleLbl_Resize;
             // 
             // votesLbl
             // 

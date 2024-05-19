@@ -27,11 +27,7 @@ namespace SpeakingChatbot.UserControls {
             SignUpClick?.Invoke();
         }
 
-        private void keyLbl_Click(object sender, EventArgs e) {
-            WelcomeClick?.Invoke();
-        }
-
-        private void midTbl_Click(object sender, EventArgs e) {
+        private void titleLbl_Click(object sender, EventArgs e) {
             WelcomeClick?.Invoke();
         }
     }

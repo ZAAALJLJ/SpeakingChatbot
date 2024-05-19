@@ -44,11 +44,14 @@ namespace ChatServer.Bot {
             }
         }
         private static string CleanseOutput(string output) {
-            output = output.Replace("\\n", " ");
-            output = output.Replace("\\n*", "");
-            output = output.Replace("\\n\\n", "");
+            output = output.Replace("\\n", System.Environment.NewLine);
+            output = output.Replace("\\n*", System.Environment.NewLine);
+            output = output.Replace("\\n\\n", System.Environment.NewLine + System.Environment.NewLine);
             output = output.Replace("##", "");
             output = output.Replace("??", "");
+            output = output.Replace("**", "");
+            output.TrimStart('*');
+            output.TrimStart('?');
 
             return output;
         }

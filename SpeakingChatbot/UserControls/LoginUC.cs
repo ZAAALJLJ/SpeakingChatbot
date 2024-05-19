@@ -16,6 +16,7 @@ namespace SpeakingChatbot.UserControls {
     public partial class LoginUC : UserControl {
         public event EventHandler<string> LoginEnterClick;
         public event EventHandler<object> LoginSetClient;
+        public event Action BackBtnClick;
 
         Crud crud;
         public LoginUC() {
@@ -30,8 +31,6 @@ namespace SpeakingChatbot.UserControls {
 
             if (!string.IsNullOrWhiteSpace(username) &&
               !string.IsNullOrWhiteSpace(password)) {
-                // get user by uername function sa db
-                // if found, check yung password
 
                 bool isFound = crud.checkCredentials(username, password);
 
@@ -39,7 +38,6 @@ namespace SpeakingChatbot.UserControls {
                     errorMsg.Text = "Incorrect username of password.";
                     errorMsg.Visible = true;
                 } else {
-                    // connect socket
                     socketControl client = new socketControl();
                     client.ConnectToServer(username);
 
@@ -63,7 +61,11 @@ namespace SpeakingChatbot.UserControls {
             passwordTextBox.Font = new Font(passwordTextBox.Font.FontFamily, newSize);
         }
 
-        private void LoginUC_Click(object sender, EventArgs e) {
+        private void backBtn_Click(object sender, EventArgs e) {
+            BackBtnClick?.Invoke();
+        }
+
+        private void usernameTextBox_Resize(object sender, EventArgs e) {
             AdjustFontSize();
         }
     }

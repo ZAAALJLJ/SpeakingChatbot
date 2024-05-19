@@ -18,6 +18,13 @@ namespace SpeakingChatbot.UserControls {
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -56,7 +63,7 @@ namespace SpeakingChatbot.UserControls {
             welcomeTblPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             welcomeTblPanel.Size = new Size(1515, 600);
             welcomeTblPanel.TabIndex = 4;
-            welcomeTblPanel.Click += welcomeTblPanel_Click;
+            welcomeTblPanel.Click += continueTbl_Click;
             // 
             // titleTbl
             // 
@@ -77,6 +84,7 @@ namespace SpeakingChatbot.UserControls {
             titleTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             titleTbl.Size = new Size(1515, 150);
             titleTbl.TabIndex = 3;
+            titleTbl.Click += continueTbl_Click;
             // 
             // titleLbl
             // 
@@ -89,6 +97,7 @@ namespace SpeakingChatbot.UserControls {
             titleLbl.SizeMode = PictureBoxSizeMode.StretchImage;
             titleLbl.TabIndex = 0;
             titleLbl.TabStop = false;
+            titleLbl.Click += continueTbl_Click;
             // 
             // continueTbl
             // 
@@ -107,6 +116,7 @@ namespace SpeakingChatbot.UserControls {
             continueTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             continueTbl.Size = new Size(1515, 180);
             continueTbl.TabIndex = 4;
+            continueTbl.Click += continueTbl_Click;
             // 
             // continueLbl
             // 
@@ -119,6 +129,7 @@ namespace SpeakingChatbot.UserControls {
             continueLbl.SizeMode = PictureBoxSizeMode.StretchImage;
             continueLbl.TabIndex = 0;
             continueLbl.TabStop = false;
+            continueLbl.Click += continueTbl_Click;
             // 
             // WelcomeUC
             // 

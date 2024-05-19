@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -72,6 +79,7 @@
             // 
             submitBtn.AutoSize = true;
             submitBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            submitBtn.Cursor = Cursors.Hand;
             submitBtn.Dock = DockStyle.Fill;
             submitBtn.Location = new Point(0, 0);
             submitBtn.Name = "submitBtn";
@@ -98,6 +106,7 @@
             // 
             // content
             // 
+            content.Cursor = Cursors.IBeam;
             content.Dock = DockStyle.Fill;
             content.ForeColor = Color.White;
             content.Location = new Point(0, 81);
@@ -120,11 +129,13 @@
             // 
             // backBtn
             // 
-            backBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            backBtn.Cursor = Cursors.Hand;
+            backBtn.Dock = DockStyle.Right;
             backBtn.Image = Properties.Resources.backbutton;
-            backBtn.Location = new Point(737, 3);
+            backBtn.Location = new Point(737, 0);
+            backBtn.MaximumSize = new Size(128, 78);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(125, 54);
+            backBtn.Size = new Size(128, 78);
             backBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             backBtn.TabIndex = 1;
             backBtn.TabStop = false;
@@ -133,14 +144,16 @@
             // titleLbl
             // 
             titleLbl.AutoSize = true;
+            titleLbl.Cursor = Cursors.IBeam;
             titleLbl.Dock = DockStyle.Fill;
             titleLbl.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
             titleLbl.ForeColor = Color.White;
             titleLbl.Location = new Point(0, 0);
+            titleLbl.MaximumSize = new Size(700, 0);
             titleLbl.Name = "titleLbl";
-            titleLbl.Size = new Size(231, 81);
+            titleLbl.Size = new Size(171, 81);
             titleLbl.TabIndex = 0;
-            titleLbl.Text = "TITLEEE";
+            titleLbl.Text = "TITLE";
             titleLbl.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // commentPanel
@@ -167,6 +180,7 @@
             Padding = new Padding(20);
             Size = new Size(931, 683);
             Load += FormUC_Load;
+            Resize += FormUC_Resize;
             formTbl.ResumeLayout(false);
             bottomPanel.ResumeLayout(false);
             bottomPanel.PerformLayout();

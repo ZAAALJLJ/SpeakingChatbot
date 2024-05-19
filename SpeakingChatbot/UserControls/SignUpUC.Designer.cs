@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -26,6 +33,7 @@
             signUpTbl = new TableLayoutPanel();
             titleTbl = new TableLayoutPanel();
             signUpLbl = new PictureBox();
+            backBtn = new PictureBox();
             enterTbl = new TableLayoutPanel();
             enterBtn = new PictureBox();
             midTbl = new TableLayoutPanel();
@@ -34,13 +42,14 @@
             passwordTbl = new TableLayoutPanel();
             passwordLbl = new PictureBox();
             cPasswordLbl = new PictureBox();
-            usernameTextBox = new RichTextBox();
-            passwordTextBox = new RichTextBox();
-            cPasswordTextBox = new RichTextBox();
+            usernameTextBox = new TextBox();
+            passwordTextBox = new TextBox();
+            cPasswordTextBox = new TextBox();
             errorMsg = new Label();
             signUpTbl.SuspendLayout();
             titleTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)signUpLbl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             enterTbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)enterBtn).BeginInit();
             midTbl.SuspendLayout();
@@ -79,6 +88,7 @@
             titleTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44F));
             titleTbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             titleTbl.Controls.Add(signUpLbl, 1, 1);
+            titleTbl.Controls.Add(backBtn, 2, 0);
             titleTbl.Dock = DockStyle.Fill;
             titleTbl.Location = new Point(3, 3);
             titleTbl.Name = "titleTbl";
@@ -100,6 +110,19 @@
             signUpLbl.TabIndex = 0;
             signUpLbl.TabStop = false;
             // 
+            // backBtn
+            // 
+            backBtn.Cursor = Cursors.Hand;
+            backBtn.Dock = DockStyle.Right;
+            backBtn.Image = Properties.Resources.backbutton;
+            backBtn.Location = new Point(1146, 3);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(125, 48);
+            backBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            backBtn.TabIndex = 1;
+            backBtn.TabStop = false;
+            backBtn.Click += backBtn_Click;
+            // 
             // enterTbl
             // 
             enterTbl.ColumnCount = 3;
@@ -119,6 +142,7 @@
             // 
             // enterBtn
             // 
+            enterBtn.Cursor = Cursors.Hand;
             enterBtn.Dock = DockStyle.Fill;
             enterBtn.Image = Properties.Resources.enter;
             enterBtn.Location = new Point(496, 85);
@@ -228,30 +252,32 @@
             // 
             // usernameTextBox
             // 
+            usernameTextBox.Cursor = Cursors.IBeam;
             usernameTextBox.Dock = DockStyle.Fill;
             usernameTextBox.Location = new Point(664, 51);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(427, 43);
+            usernameTextBox.Size = new Size(427, 27);
             usernameTextBox.TabIndex = 3;
-            usernameTextBox.Text = "";
             // 
             // passwordTextBox
             // 
+            passwordTextBox.Cursor = Cursors.IBeam;
             passwordTextBox.Dock = DockStyle.Fill;
             passwordTextBox.Location = new Point(664, 146);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(427, 43);
+            passwordTextBox.PasswordChar = '*';
+            passwordTextBox.Size = new Size(427, 27);
             passwordTextBox.TabIndex = 4;
-            passwordTextBox.Text = "";
             // 
             // cPasswordTextBox
             // 
+            cPasswordTextBox.Cursor = Cursors.IBeam;
             cPasswordTextBox.Dock = DockStyle.Fill;
             cPasswordTextBox.Location = new Point(664, 241);
             cPasswordTextBox.Name = "cPasswordTextBox";
-            cPasswordTextBox.Size = new Size(427, 45);
+            cPasswordTextBox.PasswordChar = '*';
+            cPasswordTextBox.Size = new Size(427, 27);
             cPasswordTextBox.TabIndex = 5;
-            cPasswordTextBox.Text = "";
             // 
             // errorMsg
             // 
@@ -282,6 +308,7 @@
             signUpTbl.ResumeLayout(false);
             titleTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)signUpLbl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             enterTbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)enterBtn).EndInit();
             midTbl.ResumeLayout(false);
@@ -306,11 +333,12 @@
         private TableLayoutPanel passwordTbl;
         private PictureBox passwordLbl;
         private PictureBox cPasswordLbl;
-        private RichTextBox usernameTextBox;
-        private RichTextBox passwordTextBox;
+        private TextBox usernameTextBox;
+        private TextBox passwordTextBox;
         private PictureBox enterBtn;
-        private RichTextBox cPasswordTextBox;
+        private TextBox cPasswordTextBox;
         private PictureBox signUpLbl;
         private Label errorMsg;
+        private PictureBox backBtn;
     }
 }

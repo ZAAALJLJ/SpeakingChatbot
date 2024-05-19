@@ -71,8 +71,6 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void formClicked(object sender, int postId) {
-            // Debug.WriteLine(postId);
-            // Debug.WriteLine("magiccc");
             ViewFormClick?.Invoke(this, postId);
         }
 
@@ -85,8 +83,6 @@ namespace SpeakingChatbot.UserControls {
         }
 
         private void displayPost(object? sender, string[] postInfo) {
-            // Debug.WriteLine("xxxxxxxxxx");
-
             formItem = new FormItemUC(postInfo) {
                 Name = "post" + postInfo[0],
                 Dock = DockStyle.Top,
@@ -111,9 +107,7 @@ namespace SpeakingChatbot.UserControls {
             foreach (int n in sdgs) {
                 Debug.WriteLine(n);
             }
-
-            // cat and sdgs yug add sa query
-
         }
+
     }
 }

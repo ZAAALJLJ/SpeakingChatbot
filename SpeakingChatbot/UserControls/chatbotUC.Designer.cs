@@ -22,6 +22,13 @@ namespace SpeakingChatbot.UserControls {
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -134,6 +141,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // backBtn
             // 
+            backBtn.Cursor = Cursors.Hand;
             backBtn.Dock = DockStyle.Fill;
             backBtn.Image = Properties.Resources.backbutton;
             backBtn.Location = new Point(0, 0);
@@ -196,8 +204,10 @@ namespace SpeakingChatbot.UserControls {
             // 
             sendBtn.AutoSize = true;
             sendBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            sendBtn.Cursor = Cursors.Hand;
             sendBtn.Dock = DockStyle.Fill;
             sendBtn.FlatStyle = FlatStyle.Flat;
+            sendBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
             sendBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             sendBtn.ForeColor = Color.White;
             sendBtn.Location = new Point(420, 3);
@@ -210,6 +220,7 @@ namespace SpeakingChatbot.UserControls {
             // 
             // msgBox
             // 
+            msgBox.Cursor = Cursors.IBeam;
             msgBox.Dock = DockStyle.Fill;
             msgBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             msgBox.Location = new Point(3, 3);
@@ -252,8 +263,10 @@ namespace SpeakingChatbot.UserControls {
             BackgroundImage = Properties.Resources.ai;
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(chatbotTbl);
+            DoubleBuffered = true;
             Name = "ChatbotUC";
             Size = new Size(1165, 737);
+            Paint += ChatbotUC_Paint;
             Resize += ChatbotUC_Resize;
             chatbotTbl.ResumeLayout(false);
             botTbl.ResumeLayout(false);

@@ -15,6 +15,13 @@
             }
             base.Dispose(disposing);
         }
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         #region Component Designer generated code
 
@@ -79,10 +86,11 @@
             midTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35.3137245F));
             midTbl.Size = new Size(714, 210);
             midTbl.TabIndex = 2;
-            midTbl.Click += midTbl_Click;
+            midTbl.Click += titleLbl_Click;
             // 
             // loginBtn
             // 
+            loginBtn.Cursor = Cursors.Hand;
             loginBtn.Dock = DockStyle.Fill;
             loginBtn.Image = Properties.Resources.loginbutton;
             loginBtn.Location = new Point(139, 74);
@@ -96,6 +104,7 @@
             // 
             // signUpBtn
             // 
+            signUpBtn.Cursor = Cursors.Hand;
             signUpBtn.Dock = DockStyle.Fill;
             signUpBtn.Image = Properties.Resources.signupbutton;
             signUpBtn.Location = new Point(394, 74);
@@ -135,6 +144,7 @@
             titleTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             titleTbl.Size = new Size(720, 120);
             titleTbl.TabIndex = 3;
+            titleTbl.Click += titleLbl_Click;
             // 
             // titleLbl
             // 
@@ -147,6 +157,7 @@
             titleLbl.SizeMode = PictureBoxSizeMode.StretchImage;
             titleLbl.TabIndex = 0;
             titleLbl.TabStop = false;
+            titleLbl.Click += titleLbl_Click;
             // 
             // continueTbl
             // 
@@ -164,6 +175,7 @@
             continueTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             continueTbl.Size = new Size(720, 144);
             continueTbl.TabIndex = 4;
+            continueTbl.Click += titleLbl_Click;
             // 
             // LoginSignUpUC
             // 
