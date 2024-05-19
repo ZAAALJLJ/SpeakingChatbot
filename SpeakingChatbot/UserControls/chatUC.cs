@@ -1,7 +1,6 @@
 ﻿using MySqlX.XDevAPI;
 using MySqlX.XDevAPI.Common;
 using SpeakingChatbot.db;
-using SpeakingChatbot.Models;
 using SpeakingChatbot.socket;
 using SpeakingChatbot.socket.IO;
 using SpeakingChatbot.UserControls.SubUC;
