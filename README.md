@@ -2,6 +2,17 @@
 
 CHAVATAR is an innovative online platform that leverages advanced AI to promote awareness of the United Nations Sustainable Development Goals (SDGs). Its main features include AI-driven chatting with a speaking and moving avatar, user-to-user interactions through speaking and moving avatars, and vibrant online forums and communities. These interactive elements provide personalized content and engaging learning experiences, empowering users to understand and adopt sustainable practices. Whether you're a student, educator, or sustainability enthusiast, CHAVATAR offers the tools and community support to make informed decisions and contribute to a more sustainable future. Join us to explore the SDGs, track your progress, and collaborate with like-minded individuals committed to making a positive impact on the planet.
 
+---
+# Objectives
+
+Develop a system that integrates artificial intelligence with the 17 Sustainable Development Goals (SDGs).
+
+Enhance the system with additional features that specifically address the 17 SDGs.
+
+Analyze and evaluate the system's response quality, response time interval, and real-time conversation latency.
+
+Compare the performance of the developed system with other widely-used conversational AIs to determine its effectiveness and efficiency.
+
 
 ---
 # Dependencies
