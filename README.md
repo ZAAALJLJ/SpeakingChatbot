@@ -1,6 +1,6 @@
 # CHAVATAR: AI-Integrated SDG Awareness Online Platform
 
-CHAVATAR is an innovative online platform that leverages advanced AI to promote awareness of the United Nations Sustainable Development Goals (SDGs). Its main features include AI-driven chatting with a speaking and moving avatar, user-to-user interactions through speaking and moving avatars, and vibrant online forums and communities. These interactive elements provide personalized content and engaging learning experiences, empowering users to understand and adopt sustainable practices. Whether you're a student, educator, or sustainability enthusiast, CHAVATAR offers the tools and community support to make informed decisions and contribute to a more sustainable future. Join us to explore the SDGs, track your progress, and collaborate with like-minded individuals committed to making a positive impact on the planet.
+CHAVATAR is an online platform that leverages advanced AI to promote awareness of the Sustainable Development Goals (SDGs). Its main features include AI-driven chatting with a speaking and moving avatar, user-to-user interactions through speaking and moving avatars, and vibrant online forums and communities. These interactive elements provide personalized content and engaging learning experiences, empowering users to understand and adopt sustainable practices. Whether you're a student, educator, or sustainability enthusiast, CHAVATAR offers the tools and community support to make informed decisions and contribute to a more sustainable future. Join us to explore the SDGs, track your progress, and collaborate with like-minded individuals committed to making a positive impact on the planet.
 
 ---
 # Objectives
@@ -13,6 +13,14 @@ Analyze and evaluate the system's response quality, response time interval, and 
 
 Compare the performance of the developed system with other widely-used conversational AIs to determine its effectiveness and efficiency.
 
+---
+# Features
+
+AI Chatting with Avatar: Engage in conversations powered by AI with a dynamic speaking and moving avatar.
+
+User-to-User Chatting: Communicate with other users using interactive avatars for more engaging interactions.
+
+Online Forums and Communities: Participate in online forums and communities focused on sustainable development goals (SDGs) for collaboration and knowledge sharing.
 
 ---
 # Dependencies
