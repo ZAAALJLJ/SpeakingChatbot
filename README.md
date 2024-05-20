@@ -1,4 +1,4 @@
-# CHAVATAR: AI-Integrated SDG Awareness Online Platform
+# CHAVATAR: AI-Integrated SDG Awareness Online Platform  🌟
 
 **CHAVATAR** is an online platform that leverages advanced AI to **promote awareness** of the **Sustainable Development Goals (SDGs)**. Its main features include AI-driven chatting with a speaking and moving avatar, user-to-user interactions through speaking and moving avatars, and vibrant online forums and communities. These interactive elements provide personalized content and engaging learning experiences, empowering users to understand and adopt sustainable practices. Whether you're a student, educator, or sustainability enthusiast, CHAVATAR offers the tools and community support to make informed decisions and contribute to a more sustainable future. Join us to explore the SDGs, track your progress, and collaborate with like-minded individuals committed to making a positive impact on the planet.
 
